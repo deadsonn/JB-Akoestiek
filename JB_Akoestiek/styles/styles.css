@@ -1,0 +1,303 @@
+/* BASIC RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* GLOBAL STYLES */
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+/* HEADER */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3.875rem; /* ~62px */
+  background-color: #FAFAFA;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  z-index: 1001;
+  padding: 0 1rem;
+}
+
+.header-left .logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.header-middle ul,
+.header-right ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.header-middle ul li a,
+.header-right ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.header-middle ul li a:hover,
+.header-right ul li a:hover {
+  color: #555;
+}
+
+.cart-button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+/* MAIN CONTENT */
+.main-content {
+  margin-top: 5.125rem; /* ~82px => ensuring space below fixed header */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 300px; /* Zorgt dat de slides altijd dezelfde hoogte hebben */
+  overflow: hidden;
+}
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 24rem;
+  transition: transform 0.5s ease;
+}
+
+.hero-slide img {
+  width: 100%; 
+  height: 100%; 
+    object-fit: cover;
+}
+
+/* MISSION STATEMENT */
+.mission-statement {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.mission-statement p {
+  margin: 1rem 0;
+}
+
+.read-more {
+  color: #007BFF;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
+/* CUSTOM PANELS SECTION */
+.custom-panels {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.custom-panels h2 {
+  margin-bottom: 1rem;
+}
+
+/* PRODUCT SEARCH */
+.product-search {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.product-search input[type="search"] {
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+/* RECOMMENDED PRODUCTS */
+.recommended-products {
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 2rem;
+}
+
+.products-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.product-card {
+  background-color: #f5f5f5;
+  padding: 1rem;
+  width: 180px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+/* ABOUT SECTION */
+.about-section {
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 2rem;
+}
+
+.about-section ul {
+  list-style: disc;
+  margin-left: 1.5rem;
+}
+
+/* FOOTER */
+.footer {
+  width: 100%;
+  background-color: #FAFAFA;
+  text-align: center;
+  padding: 1rem;
+  border-top: 1px solid #ddd;
+  margin-top: auto;
+}
+
+/* CART POPUP */
+.cart-popup {
+  position: fixed;
+  top: 0;
+  right: -50%;
+  width: 22rem;
+  min-width: 200px;
+  height: 100vh;
+  background-color: #FFF;
+  box-shadow: -3px 0 10px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  transition: right 0.3s ease;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.cart-popup.open {
+  right: 0;
+}
+
+.cart-popup .order-summary p {
+  margin: 0.5rem 0;
+}
+
+.close-cart {
+  background: #777;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 1.2rem;
+  border: none;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+/* PANELEN OP MAAT PAGE */
+.custom-panels-form {
+  max-width: 600px;
+  width: 100%;
+  margin: 2rem auto;
+}
+
+.custom-panels-form .form-group {
+  margin-bottom: 1rem;
+}
+
+.custom-panels-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.custom-panels-form input[type="text"],
+.custom-panels-form input[type="number"],
+.custom-panels-form input[type="email"],
+.custom-panels-form input[type="tel"],
+.custom-panels-form select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+}
+
+.custom-panels-form button[type="submit"] {
+  background-color: #007BFF;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+/* MEDIA QUERIES */
+
+/* Extra Small Devices (max-width: 576px) */
+@media (max-width: 576px) {
+  .header-middle ul,
+  .header-right ul {
+    gap: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .hero {
+    max-height: 300px; /* Adjust for smaller screens */
+  }
+
+  .products-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-card {
+    width: 80%;
+  }
+
+ 
+}
+
+/* Small Devices (max-width: 768px) */
+@media (max-width: 768px) {
+  .header {
+    padding: 0 0.5rem;
+  }
+
+  .main-content {
+    padding: 0.5rem;
+  }
+}
+
+/* Medium Devices (max-width: 992px) */
+@media (max-width: 992px) {
+  .products-flex {
+    justify-content: flex-start;
+  }
+}
+
+/* Large Devices (max-width: 1200px) */
+@media (max-width: 1200px) {
+  .recommended-products {
+    max-width: 960px;
+  }
+}
+
+/* Extra Large Devices (max-width: 1400px) */
+@media (max-width: 1400px) {
+  .recommended-products {
+    max-width: 1140px;
+  }
+}

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JB Akoestiek | Hoofdpagina</title>
+  <link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-left">
+      <h1 class="logo">JBAkoestiek</h1>
+    </div>
+    <nav class="header-middle">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#products">Producten</a></li>
+        <li><a href="panelen-op-maat.html">Op maat</a></li>
+        <li><a href="#about-us">Over ons</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-right">
+      <ul>
+        <li><a href="#">Log in</a></li>
+        <li><a href="#">Bestelling volgen</a></li>
+        <li><a href="#">e-mail voor promo</a></li>
+        <li><a href="#">Registreren</a></li>
+        <li><button class="cart-button" id="cartButton">🛒</button></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- BODY -->
+  <main class="main-content">
+    
+    <!-- HERO (Vertical Slider Placeholder) -->
+    <section class="hero">
+      <div class="hero-slide">
+        <img src="https://images.pexels.com/photos/7191996/pexels-photo-7191996.jpeg?auto=compress&cs=tinysrgb&h=600" alt="Hero Slide 1" />
+      </div>
+      <div class="hero-slide">
+        <img src="https://images.pexels.com/photos/6716370/pexels-photo-6716370.jpeg?auto=compress&cs=tinysrgb&h=600" alt="Hero Slide 2" />
+      </div>
+      <div class="hero-slide">
+        <img src="https://images.pexels.com/photos/7688177/pexels-photo-7688177.jpeg?auto=compress&cs=tinysrgb&h=600" alt="Hero Slide 3" />
+      </div>
+      <!-- Add vertical slider functionality via JavaScript if needed -->
+    </section>
+
+    <!-- Mission Statement Section -->
+    <section class="mission-statement">
+      <h2>Onze missie</h2>
+      <p>
+        Wij leveren hoogwaardige akoestische panelen die zorgen voor een betere geluidsbeleving 
+        in iedere ruimte, van conferentiezaal tot studio. 
+      </p>
+      <a href="about.html" class="read-more">Lees meer &raquo;</a>
+    </section>
+
+    <!-- Panelen op maat / Acties / Kortingscode -->
+    <section class="custom-panels">
+      <h2>Panelen op maat</h2>
+      <p>
+        Laat je akoestische panelen volledig op maat maken. Bepaal vorm, afmetingen, 
+        kleur of print. 
+      </p>
+      <h3>Acties</h3>
+      <p>Gebruik onze speciale kortingscodes voor tijdelijke aanbiedingen!</p>
+    </section>
+
+    <!-- Search & Product Info -->
+    <section class="product-search">
+      <h2>Zoekfunctie producten</h2>
+      <input type="search" placeholder="Zoek naar producten..." />
+      <button type="button">Zoek</button>
+      <p>Bestel in een paar klikken panelen op maat. <a href="panelen-op-maat.html">Klik hier</a> voor meer info!</p>
+    </section>
+
+    <!-- Recommended Products -->
+    <section class="recommended-products" id="products">
+      <h2>Aanbevolen</h2>
+      <div class="products-flex">
+        <div class="product-card">
+          <img src="https://via.placeholder.com/200" alt="Product 1">
+          <h3>Product 1</h3>
+        </div>
+        <div class="product-card">
+          <img src="https://via.placeholder.com/200" alt="Product 2">
+          <h3>Product 2</h3>
+        </div>
+        <div class="product-card">
+          <img src="https://via.placeholder.com/200" alt="Product 3">
+          <h3>Product 3</h3>
+        </div>
+        <div class="product-card">
+          <img src="https://via.placeholder.com/200" alt="Product 4">
+          <h3>Product 4</h3>
+        </div>
+        <div class="product-card">
+          <img src="https://via.placeholder.com/200" alt="Product 5">
+          <h3>Product 5</h3>
+        </div>
+        <div class="product-card">
+          <img src="https://via.placeholder.com/200" alt="Product 6">
+          <h3>Product 6</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- Over Ons -->
+    <section class="about-section" id="about-us">
+      <h2>Over</h2>
+      <ul>
+        <li>Nut van panelen</li>
+        <li>Duurzaam (circulair) materiaal</li>
+        <li>Maatwerk</li>
+        <li>Certificaten</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="contact">
+    <p>Adres: Voorbeeldstraat 123, 1234 AB, Stad</p>
+    <p>Telefoon: 012-3456789 | E-mail: info@jbakoestiek.nl</p>
+    <p>&copy; 2025 JB Akoestiek</p>
+  </footer>
+
+  <!-- RIGHT-SIDE POPUP (Shopping Cart) -->
+  <aside class="cart-popup" id="cartPopup">
+    <h2>Bestelling afronden</h2>
+    <div class="order-summary">
+      <p>Samenvatting bestelling</p>
+      <p>Kosten producten: €0,00</p>
+      <p>Verzendkosten: €0,00</p>
+      <p>BTW: €0,00</p>
+      <p><strong>Totaal: €0,00</strong></p>
+    </div>
+    <h3>Betaalmethode</h3>
+    <ul>
+      <li><button>iDeal</button></li>
+      <li><button>Visa / Mastercard</button></li>
+      <li><button>PayPal</button></li>
+    </ul>
+    <button class="close-cart" id="closeCart">Sluiten</button>
+  </aside>
+
+ 
+</body> 
+  <script src="jacascript/cart-popup.js"></script>
+  <script src="jacascript/hero-slider.js"></script>
+</html>
