@@ -24,8 +24,8 @@
           </div>
         </li>
         <li>
-          <div class="circle-div">
-            <button class="cart-button" id="cartButton">
+          <div class="circle-div" id="cartButton">
+            <button class="cart-button" >
               <i class="material-symbols-outlined">shopping_bag</i>
             </button>
           </div>
@@ -40,6 +40,26 @@
       </ul>
     </div>
   </header>
+</header>
+
+  <!-- RIGHT-SIDE POPUP (Shopping Cart) -->
+  <aside class="cart-popup" id="cartPopup">
+    <h2>Bestelling afronden</h2>
+    <div class="order-summary">
+      <p>Samenvatting bestelling</p>
+      <p>Kosten producten: €0,00</p>
+      <p>Verzendkosten: €0,00</p>
+      <p>BTW: €0,00</p>
+      <p><strong>Totaal: €0,00</strong></p>
+    </div>
+    <h3>Betaalmethode</h3>
+    <ul>
+      <li><button>iDeal</button></li>
+      <li><button>Visa / Mastercard</button></li>
+      <li><button>PayPal</button></li>
+    </ul>
+    <button class="close-cart" id="closeCart">Sluiten</button>
+  </aside>
 
   <!-- Sliding Menu -->
   <div class="sliding-menu" id="slidingMenu">
@@ -101,4 +121,9 @@
       </div>
     </div>
   </div>
+
+  <script src="javascript/header.js"></script>
+
+
 </body>
+

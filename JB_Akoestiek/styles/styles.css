@@ -129,39 +129,7 @@ body {
   margin-top: auto;
 }
 
-/* CART POPUP */
-.cart-popup {
-  position: fixed;
-  top: 0;
-  right: -50%;
-  width: 22rem;
-  min-width: 200px;
-  height: 100vh;
-  background-color: #FFF;
-  box-shadow: -3px 0 10px rgba(0, 0, 0, 0.2);
-  padding: 2rem;
-  transition: right 0.3s ease;
-  overflow-y: auto;
-  z-index: 1005;
-}
 
-.cart-popup.open {
-  right: 0;
-}
-
-.cart-popup .order-summary p {
-  margin: 0.5rem 0;
-}
-
-.close-cart {
-  background: #777;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 1.2rem;
-  border: none;
-  cursor: pointer;
-  margin-top: 1rem;
-}
 
 /* PANELEN OP MAAT PAGE */
 .custom-panels-form {

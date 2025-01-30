@@ -60,8 +60,44 @@ document.addEventListener('DOMContentLoaded', () => {
           authModal.style.display = 'none';
         }
       });
+
+      // Initialize cart functionality after header is loaded
+      initializeCart();
     })
     .catch(error => {
       console.error(error);
     });
 });
+
+// Separate function to initialize cart functionality
+function initializeCart() {
+  const cartButton = document.getElementById('cartButton');
+  const cartPopup = document.getElementById('cartPopup');
+  const closeCart = document.getElementById('closeCart');
+
+  if (!cartButton || !cartPopup || !closeCart) {
+    console.error('Cart elements not found. Make sure they exist in the HTML.');
+    return;
+  }
+
+  cartButton.addEventListener('click', (e) => {
+    e.stopPropagation();
+    cartPopup.classList.toggle('open');
+  });
+
+  closeCart.addEventListener('click', () => {
+    cartPopup.classList.remove('open');
+  });
+
+  // Close cart when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!cartPopup.contains(e.target) && !cartButton.contains(e.target)) {
+      cartPopup.classList.remove('open');
+    }
+  });
+
+  // Prevent closing when clicking inside the cart
+  cartPopup.addEventListener('click', (e) => {
+    e.stopPropagation();
+  });
+}
