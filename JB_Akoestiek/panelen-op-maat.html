@@ -6,254 +6,215 @@
   <title>Panelen op maat - JB Akoestiek</title>
   <link rel="stylesheet" href="styles/styles.css" />
   <link rel="stylesheet" href="styles/op-maat.css">
+  <link rel="stylesheet" href="styles/header.css" />
+  <link rel="stylesheet" href="styles/media-queries.css"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:wght@700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=account_circle,shopping_bag,shopping_cart" />
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu" />
 </head>
 <body>
+  <!-- HEADER: linked to header.html using header.js -->
+  <div id="header-container"></div>
 
-  <!-- Header -->
-    <!-- HEADER -->
-    <header class="header">
-      <div class="header-left">
-        <h1 class="logo">JBAkoestiek</h1>
-      </div>
-      <nav class="header-middle">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="#products">Producten</a></li>
-          <li><a href="panelen-op-maat.html">Op maat</a></li>
-          <li><a href="#about-us">Over ons</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-      <div class="header-right">
-        <ul>
-          <li><a href="#">Log in</a></li>
-          <li><a href="#">Bestelling volgen</a></li>
-          <li><a href="#">e-mail voor promo</a></li>
-          <li><a href="#">Registreren</a></li>
-          <li><button class="cart-button" id="cartButton">🛒</button></li>
-        </ul>
-      </div>
-    </header>
+  <!-- Main content -->
+  <main class="main-content">
+    <section class="custom-panels-form">
+      <h2 class="opmaat-tekst">Panelen op maat</h2>
 
-    <main class="main-content">
-      <section class="custom-panels-form">
-        <h2>Panelen op maat</h2>
-    
-        <!-- We wrap everything in one form. Each "panel-order" is a repeatable set of fields. -->
-        <form id="masterForm" action="#" method="post">
-    
-          <!-- SINGLE PANEL BLOCK (user can clone) -->
-          <div class="panel-order">
-    
-            <!-- Remove button (shown only on cloned blocks) -->
-            <button type="button" class="remove-panel-btn">Verwijder paneel</button>
-    
-            <!-- Verborgen input voor vorm (ingevuld via klik) -->
-            <input type="hidden" class="shapeHidden" name="shape" />
-    
-            <h3>Kies een vorm:</h3>
-            <div class="shapes-container">
-              <!-- Voorbeeldvorm: Vierkant -->
-              <div class="shape-option" data-shape="vierkant">
-                <svg width="100" height="100">
-                  <polygon 
-                    points="10,10 90,10 90,90 10,90" 
-                    fill="none" 
-                    stroke="black" 
-                    stroke-width="3"
-                  />
-                  <text x="40" y="30" font-family="Arial" font-size="14" fill="black">
-                    
-                  </text>
-                </svg>
-              </div>
-              <!-- Rechthoek -->
-              <div class="shape-option" data-shape="vierkant">
-                <svg width="100" height="100">
-                  <polygon
-                    points="25,10 75,10 75,90 25,90"
-                    fill="none"
-                    stroke="black"
-                    stroke-width="3"
-                  />
-                  <text x="40" y="30" font-family="Arial" font-size="14" fill="black">
-                    
-                  </text>
-                </svg>
-              </div>
-              <!-- Cirkel -->
-              <div class="shape-option" data-shape="cirkel">
-                <svg width="100" height="100">
-                  <!-- A circle centered at (50,50) with radius 40 -->
-                  <circle
-                    cx="50" cy="50" r="40"
-                    fill="none"
-                    stroke="black"
-                    stroke-width="3"
-                  />
-                  <text x="36" y="55" font-family="Arial" font-size="14" fill="black">
-                    
-                  </text>
-                </svg>
-              </div>
-              <!-- Driehoek -->
-              <div class="shape-option" data-shape="driehoek">
-                <svg width="100" height="100">
-                  <polygon
-                    points="50,10 90,90 10,90"
-                    fill="none"
-                    stroke="black"
-                    stroke-width="3"
-                  />
-                  <text x="30" y="30" font-family="Arial" font-size="14" fill="black">
-                    
-                  </text>
-                </svg>
-              </div>
-              <!-- Octagon -->
-              <div class="shape-option" data-shape="octagon">
-                <svg width="100" height="100">
-                  <polygon
-                    points="
-                      30,10
-                      70,10
-                      90,30
-                      90,70
-                      70,90
-                      30,90
-                      10,70
-                      10,30
-                    "
-                    fill="none"
-                    stroke="black"
-                    stroke-width="3"
-                    
-                  />
-                  <text x="22" y="55" font-family="Arial" font-size="14" fill="black">
-                    
-                  </text>
-                </svg>
+      <!-- We wrap everything in one form. Each "panel-order" is a repeatable set of fields. -->
+      <form id="masterForm" action="#" method="post">
+        <!-- SINGLE PANEL BLOCK (user can clone) -->
+        <div class="panel-order">
+          <!-- Remove button (shown only on cloned blocks) -->
+          <button type="button" class="remove-panel-btn">Verwijder paneel</button>
+
+          <!-- Verborgen input voor vorm (ingevuld via klik) -->
+          <input type="hidden" class="shapeHidden" name="shape" />
+          <div class="shapesHeader-desc">
+            <h3>1. Vorm</h3>
+            <p class="description-text">
+              Selecteer een vorm
+            </p>
+          </div>
+          <div class="shapes-container">
+            <!-- Voorbeeldvorm: Vierkant -->
+            <div class="shape-option" data-shape="vierkant">
+              <svg width="100" height="100">
+                <polygon points="10,10 90,10 90,90 10,90" fill="none" stroke="black" stroke-width="3" />
+              </svg>
+            </div>
+            <!-- Rechthoek -->
+            <div class="shape-option" data-shape="vierkant">
+              <svg width="100" height="100">
+                <polygon points="25,10 75,10 75,90 25,90" fill="none" stroke="black" stroke-width="3" />
+              </svg>
+            </div>
+            <!-- Cirkel -->
+            <div class="shape-option" data-shape="cirkel">
+              <svg width="100" height="100">
+                <circle cx="50" cy="50" r="40" fill="none" stroke="black" stroke-width="3" />
+              </svg>
+            </div>
+            <!-- Driehoek -->
+            <div class="shape-option" data-shape="driehoek">
+              <svg width="100" height="100">
+                <polygon points="50,10 90,90 10,90" fill="none" stroke="black" stroke-width="3" />
+              </svg>
+            </div>
+            <!-- Octagon -->
+            <div class="shape-option" data-shape="octagon">
+              <svg width="100" height="100">
+                <polygon points="30,10 70,10 90,30 90,70 70,90 30,90 10,70 10,30" fill="none" stroke="black" stroke-width="3" />
+              </svg>
+            </div>
+          </div>
+
+          <!-- BELOW: Fabric (typeStof) + color filters -->
+          <div class="fabric-color-filters">
+            <div>
+              <h3>2. Stof</h3>
+              <p class="description-text">
+                Selecteer een stof
+              </p>
+              <div class="typeStof">
+                <button class="selector-button" value="">Alle stoffen</button>
+                <button class="selector-button" value="Katoen">Katoen</button>
+                <button class="selector-button" value="Polyester">Polyester</button>
+                <button class="selector-button" value="Stof3">Stof3</button>
+                <button class="selector-button" value="Stof4">Stof4</button>
               </div>
             </div>
 
-          
-    
-            <!-- BELOW: Fabric (typeStof) + color filters -->
-            <div class="fabric-color-filters">
-              <div>
-                <label for="typeStof">Type stof:</label><br/>
-                <select class="typeStof">
-                  <option value="">-- Alle stoffen --</option>
-                  <option value="Katoen">Katoen</option>
-                  <option value="Polyester">Polyester</option>
-                  <option value="Stof3">Stof 3</option>
-                  <option value="Stof4">Stof 4</option>
-                </select>
-              </div>
-    
-              <div>
-                <label>Kleur filter:</label>
-                <div class="color-filters">
-                  <label><input type="checkbox" class="colorFilter" value="Red"  />Rood</label>
-                  <label><input type="checkbox" class="colorFilter" value="Blue" />Blauw</label>
-                  <label><input type="checkbox" class="colorFilter" value="Green"/>Groen</label>
-                  <label><input type="checkbox" class="colorFilter" value="Grey" />Grijs</label>
-                  <label><input type="checkbox" class="colorFilter" value="Brown"/>Bruin</label>
-                  <label><input type="checkbox" class="colorFilter" value="Orange"/>Oranje</label>
-                  <label><input type="checkbox" class="colorFilter" value="Purple"/>Paars</label>
-                  <label><input type="checkbox" class="colorFilter" value="White"/>Wit</label>
-                  <label><input type="checkbox" class="colorFilter" value="Black" />Zwart</label>
-                </div>
+            <div>
+              <h3>3. Filter op kleur</h3>
+              <div class="color-filters">
+                <button class="selector-button"><input type="checkbox" class="colorFilter" value="Red" />Rood</button>
+                <button class="selector-button"><input type="checkbox" class="colorFilter" value="Blue" />Blauw</button>
+                <button class="selector-button"><input type="checkbox" class="colorFilter" value="Green" />Groen</button>
+                <button class="selector-button"><input type="checkbox" class="colorFilter" value="Grey" />Grijs</button>
+                <button class="selector-button"><input type="checkbox" class="colorFilter" value="Brown" />Bruin</button>
+                <button class="selector-button"><input type="checkbox" class="colorFilter" value="Orange" />Oranje</button>
+                <button class="selector-button"><input type="checkbox" class="colorFilter" value="Purple" />Paars</button>
+                <button class="selector-button"><input type="checkbox" class="colorFilter" value="White" />Wit</button>
+                <button class="selector-button"><input type="checkbox" class="colorFilter" value="Black" />Zwart</button>
               </div>
             </div>
-    
-            <!-- Verborgen input voor print (ingevuld via klik) -->
-            <input type="hidden" class="printHidden" name="print" />
-    
-            <!--  HORIZONTALE SLIDER VOOR PRINTS -->
-            <div class="print-slider-container">
-              <h3>Kies een print:</h3>
-              <div class="print-slider">
-                <div class="arrow arrowLeft">&#10094;</div>
-                <div class="print-items">
-                  <!-- JS will inject prints based on fabric/color selection -->
-                </div>
-                <div class="arrow arrowRight">&#10095;</div>
+          </div>
+
+          <!-- Verborgen input voor print (ingevuld via klik) -->
+          <input type="hidden" class="printHidden" name="print" />
+
+          <!-- HORIZONTALE SLIDER VOOR PRINTS -->
+          <div class="print-slider-container">
+            <h3>4. Print</h3>
+            <p class="description-text">
+              Selecteer een print
+            </p>
+            <div class="print-slider">
+              <div class="arrow arrowLeft">&#10094;</div>
+              <div class="print-items">
+                <!-- JS will inject prints based on fabric/color selection -->
+              </div>
+              <div class="arrow arrowRight">&#10095;</div>
+            </div>
+          </div>
+
+          <!-- LENGTE, BREEDTE, DIKTE, AANTAL, PRIJS -->
+          <div class="form-group">
+            <h3>5. Lengte</h3>
+            <p class="description-text">
+              Selecteer de lengte in centimeters
+            </p>
+            <div class="length-width-container">
+              <div class="slider-container">
+                <label for="length-slider">Lengte (cm):</label>
+                <input id="length-slider" class="length-slider" type="range" min="15" max="250" value="15">
+                <input type="number" class="length" value="15" min="15" max="250">
               </div>
             </div>
-    
-            <!-- LENGTE, BREEDTE, DIKTE, AANTAL, PRIJS -->
-            <div class="form-group">
-              <label for="length">Lengte (cm):</label>
-              <input type="number" class="length" placeholder="Bijv. 100" required min="1"/>
+          </div>
+
+          <div class="form-group">
+            <h3>6. Breedte</h3>
+            <p class="description-text">
+              Selecteer de breedte in centimeters
+            </p>
+            <div class="length-width-container">
+              <div class="slider-container">
+                <label for="width-slider">Breedte (cm):</label>
+                <input id="width-slider" class="width-slider" type="range" min="15" max="250" value="15">
+                <input type="number" class="width" value="15" min="15" max="250">
+              </div>
             </div>
-            <div class="form-group">
-              <label for="width">Breedte (cm):</label>
-              <input type="number" class="width" placeholder="Bijv. 50" required min="1"/>
+          </div>
+
+          <div class="form-group">
+            <h3>7. Dikte</h3>
+            <p class="description-text">
+              Selecteer de dikte in centimeters
+            </p>
+            <div class="thickness-buttons">
+              <button class="selector-button thickness-button" data-thickness="4.5">4.5 cm</button>
+              <button class="selector-button thickness-button" data-thickness="7">7 cm</button>
+              <button class="selector-button thickness-button" data-thickness="9">9 cm</button>
             </div>
-            <div class="form-group">
-              <label for="thickness">Dikte (cm):</label>
-              <input type="number" class="thickness" placeholder="Bijv. 2" required min="1"/>
-            </div>
-            <div class="form-group">
-              <label for="quantity">Aantal:</label>
-              <input type="number" class="quantity" value="1" min="1" required/>
-            </div>
-            <div class="form-group">
-              <label for="price">Prijs (excl. btw)</label>
-              <input type="text" class="price-field" readonly placeholder="Wordt automatisch berekend..." />
-            </div>
-          </div><!-- /.panel-order -->
-    
-          <!-- BUTTON: ADD ANOTHER PANEL -->
-          <button type="button" class="add-panel-btn">Add Another Panel</button>
-    
-          <!-- SHIPPING/CONTACT FIELDS (APPLY TO ENTIRE ORDER) -->
-          <h3>Bezorging</h3>
-          <div class="form-group">
-            <label for="company">Bedrijfsnaam:</label>
-            <input type="text" id="company" name="company" placeholder="Optioneel" />
+            <input type="hidden" class="thickness" name="thickness" value="" required />
           </div>
+
           <div class="form-group">
-            <label for="firstName">Voornaam:</label>
-            <input type="text" id="firstName" name="firstName" required />
+            <h3>8. Aantal</h3>
+            <p class="description-text">
+              Selecteer het aantal panelen
+            </p>
+            <input type="number" class="quantity" value="1" min="1" required />
           </div>
-          <div class="form-group">
-            <label for="lastName">Achternaam:</label>
-            <input type="text" id="lastName" name="lastName" required />
+
+          <div class="form-group" id="price-div">
+            <h3>Prijs <span style="font-weight: 200;font-size: 0.8rem;">(excl. btw)</span></h3>
+            <input type="text" class="price-field" readonly placeholder="Wordt automatisch berekend..." />
           </div>
-          <div class="form-group">
-            <label for="email">E-mail adres:</label>
-            <input type="email" id="email" name="email" required />
-          </div>
-          <div class="form-group">
-            <label for="phone">Telefoonnummer:</label>
-            <input type="tel" id="phone" name="phone" required />
-          </div>
-          <div class="form-group">
-            <label for="address">Adres:</label>
-            <input type="text" id="address" name="address" required />
-          </div>
-          <div class="form-group">
-            <label for="deliveryTime">Levertijd:</label>
-            <input type="text" id="deliveryTime" name="deliveryTime" placeholder="Bijv. 2-3 weken" />
-          </div>
-          <div class="form-group">
-            <label for="pickup">Zelf ophalen?</label>
-            <input type="checkbox" id="pickup" name="pickup" />
-          </div>
-    
-          <!-- SUBMIT -->
-          <button type="submit">Bestellen</button>
-        </form>
-      </section>
-    </main>
+          <button class="selector-button" type="submit">Bestellen</button>
+        </div>
+        <!-- /.panel-order -->
+
+        <!-- BUTTON: ADD ANOTHER PANEL -->
+        <button type="button" class="add-panel-btn">Add Another Panel</button>
+      </form>
+    </section>
+  </main>
 
   <footer class="footer">
     <p>Adres: Voorbeeldstraat 123, 1234 AB, Stad | Tel: 012-3456789</p>
     <p>&copy; 2025 JB Akoestiek</p>
   </footer>
-</body>
+
+  <!-- RIGHT-SIDE POPUP (Shopping Cart) -->
+  <aside class="cart-popup" id="cartPopup">
+    <h2>Bestelling afronden</h2>
+    <div class="order-summary">
+      <p>Samenvatting bestelling</p>
+      <p>Kosten producten: €0,00</p>
+      <p>Verzendkosten: €0,00</p>
+      <p>BTW: €0,00</p>
+      <p><strong>Totaal: €0,00</strong></p>
+    </div>
+    <h3>Betaalmethode</h3>
+    <ul>
+      <li><button>iDeal</button></li>
+      <li><button>Visa / Mastercard</button></li>
+      <li><button>PayPal</button></li>
+    </ul>
+    <button class="close-cart" id="closeCart">Sluiten</button>
+  </aside>
+
+  <script src="javascript/header.js"></script>
   <script src="javascript/cart-popup.js"></script>
-    <script src="javascript/op-maat.js"></script>
+  <script src="javascript/hero-slider.js"></script>
+  <script src="javascript/op-maat.js"></script>
+</body>
 </html>

@@ -5,43 +5,26 @@
 
 /** SAMPLE PRINTS DATABASE (fabric + color) **/
 const PRINTS_DB = [
-  { src: "images/stoffen/Katoen-kleuren/donkerbeige.jpg", alt: "Donkerbeige",
-      typeStof: "Katoen", color: "Brown" },
-  { src: "images/stoffen/Katoen-kleuren/ecru.jpg", alt: "Ecru",
-      typeStof: "Katoen", color: "Grey" },
-  { src: "images/stoffen/Katoen-kleuren/geel.jpg", alt: "Geel",
-      typeStof: "Katoen", color: "Yellow" },
-  { src: "images/stoffen/Katoen-kleuren/grasgroen.jpg", alt: "Grasgroen",
-      typeStof: "Katoen", color: "Green" },
-  { src: "images/stoffen/Katoen-kleuren/kobaltblauw.jpg", alt: "Kobalt Blauw",
-      typeStof: "Katoen", color: "Blue" },
-      { src: "images/stoffen/Katoen-kleuren/turquoise.jpg", alt: "Turquoise",
-        typeStof: "Katoen", color: "Blue" },
-  { src: "images/stoffen/Katoen-kleuren/lime.jpg", alt: "Lime",   
-      typeStof: "Katoen", color: "Green" },
-  { src: "images/stoffen/Katoen-kleuren/oranje.jpg", alt: "Oranje", 
-      typeStof: "Katoen",  color: "Orange" },
-  { src: "images/stoffen/Katoen-kleuren/paars.jpg", alt: "Paars",
-      typeStof: "Katoen", color: "Purple" },
-  { src: "images/stoffen/Katoen-kleuren/rood.jpg", alt: "Red",   
-      typeStof: "Katoen", color: "Red" },
-  { src: "images/stoffen/Katoen-kleuren/wit.jpg", alt: "White", 
-      typeStof: "Katoen",  color: "White" },
-  { src: "images/stoffen/Katoen-kleuren/zwart.jpg", alt: "Black", 
-      typeStof: "Katoen",  color: "Black" },
-
-
-
-  { src: "https://via.placeholder.com/60/808080?text=S3-2", alt: "Stof3 Grey #2",  typeStof: "Stof3",  color: "Grey" },
-  { src: "https://via.placeholder.com/60/FFF000?text=S4-1", alt: "Stof4 Yellow#1", typeStof: "Stof4",  color: "Yellow" }
+  { src: "images/stoffen/Katoen-kleuren/donkerbeige.jpg", alt: "Donkerbeige", typeStof: "Katoen", color: "Brown" },
+  { src: "images/stoffen/Katoen-kleuren/ecru.jpg", alt: "Ecru", typeStof: "Katoen", color: "Grey" },
+  { src: "images/stoffen/Katoen-kleuren/geel.jpg", alt: "Geel", typeStof: "Katoen", color: "Yellow" },
+  { src: "images/stoffen/Katoen-kleuren/grasgroen.jpg", alt: "Grasgroen", typeStof: "Katoen", color: "Green" },
+  { src: "images/stoffen/Katoen-kleuren/kobaltblauw.jpg", alt: "Kobalt Blauw", typeStof: "Katoen", color: "Blue" },
+  { src: "images/stoffen/Katoen-kleuren/turquoise.jpg", alt: "Turquoise", typeStof: "Katoen", color: "Blue" },
+  { src: "images/stoffen/Katoen-kleuren/lime.jpg", alt: "Lime", typeStof: "Katoen", color: "Green" },
+  { src: "images/stoffen/Katoen-kleuren/oranje.jpg", alt: "Oranje", typeStof: "Katoen", color: "Orange" },
+  { src: "images/stoffen/Katoen-kleuren/paars.jpg", alt: "Paars", typeStof: "Katoen", color: "Purple" },
+  { src: "images/stoffen/Katoen-kleuren/rood.jpg", alt: "Red", typeStof: "Katoen", color: "Red" },
+  { src: "images/stoffen/Katoen-kleuren/wit.jpg", alt: "White", typeStof: "Katoen", color: "White" },
+  { src: "images/stoffen/Katoen-kleuren/zwart.jpg", alt: "Black", typeStof: "Katoen", color: "Black" },
 ];
 
 /** EXAMPLE STOF FACTORS for price calc **/
 const STOF_FACTOR = {
   Katoen: 1.2,
   Polyester: 1.5,
-  Stof3:  1.8,
-  Stof4:  2.0
+  Stof3: 1.8,
+  Stof4: 2.0
 };
 
 /***********************************************************
@@ -49,7 +32,7 @@ const STOF_FACTOR = {
  ***********************************************************/
 function initShapeSelection(panelOrderDiv) {
   const shapeOptions = panelOrderDiv.querySelectorAll(".shape-option");
-  const shapeHidden  = panelOrderDiv.querySelector(".shapeHidden");
+  const shapeHidden = panelOrderDiv.querySelector(".shapeHidden");
 
   shapeOptions.forEach(opt => {
     opt.addEventListener("click", () => {
@@ -62,18 +45,21 @@ function initShapeSelection(panelOrderDiv) {
 }
 
 /***********************************************************
- * 2) FABRIC & COLOR => filter prints
+ * 2) FABRIC BUTTONS & COLOR => filter prints
  ***********************************************************/
 function updatePrintItems(panelOrderDiv) {
-  const typeStofSelect = panelOrderDiv.querySelector(".typeStof");
-  const colorChecks    = panelOrderDiv.querySelectorAll(".colorFilter:checked");
-  const printsWrap     = panelOrderDiv.querySelector(".print-items");
-  const printHidden    = panelOrderDiv.querySelector(".printHidden");
+  const typeStofButtons = panelOrderDiv.querySelectorAll(".typeStof .selector-button");
+  const colorChecks = panelOrderDiv.querySelectorAll(".colorFilter:checked");
+  const printsWrap = panelOrderDiv.querySelector(".print-items");
+  const printHidden = panelOrderDiv.querySelector(".printHidden");
 
-  // Gather selected data
-  const stofValue = typeStofSelect.value;
+  // Get the selected fabric
+  const selectedFabricButton = Array.from(typeStofButtons).find(btn => btn.classList.contains("selected"));
+  const stofValue = selectedFabricButton ? selectedFabricButton.getAttribute("value") : "";
+
+  // Gather selected colors
   const chosenColors = Array.from(colorChecks).map(ch => ch.value);
-  const colorFilterActive = (chosenColors.length > 0);
+  const colorFilterActive = chosenColors.length > 0;
 
   // Filter from PRINTS_DB
   const filtered = PRINTS_DB.filter(p => {
@@ -82,7 +68,7 @@ function updatePrintItems(panelOrderDiv) {
     return true;
   });
 
-  // Clear existing
+  // Clear existing prints
   printsWrap.innerHTML = "";
   printHidden.value = "";
 
@@ -101,19 +87,35 @@ function updatePrintItems(panelOrderDiv) {
   });
 }
 
+function initFabricButtons(panelOrderDiv) {
+  const typeStofButtons = panelOrderDiv.querySelectorAll(".typeStof .selector-button");
+
+  typeStofButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      // Clear selection on all buttons
+      typeStofButtons.forEach(btn => btn.classList.remove("selected"));
+      button.classList.add("selected");
+      updatePrintItems(panelOrderDiv); // Update prints based on the selected fabric
+    });
+  });
+}
+
 /***********************************************************
  * 3) PRICE CALC
  * Example formula:
  * price = STOF_FACTOR[typeStof] * ((length * width * thickness)/1000) * quantity
  ***********************************************************/
 function calculatePrice(panelOrderDiv) {
-  const typeStof    = panelOrderDiv.querySelector(".typeStof").value;
-  const lengthVal   = parseFloat(panelOrderDiv.querySelector(".length").value) || 0;
-  const widthVal    = parseFloat(panelOrderDiv.querySelector(".width").value)  || 0;
-  const thickVal    = parseFloat(panelOrderDiv.querySelector(".thickness").value) || 0;
-  const qtyVal      = parseFloat(panelOrderDiv.querySelector(".quantity").value)   || 0;
+  const typeStofButtons = panelOrderDiv.querySelectorAll(".typeStof .selector-button");
+  const selectedFabricButton = Array.from(typeStofButtons).find(btn => btn.classList.contains("selected"));
+  const typeStof = selectedFabricButton ? selectedFabricButton.getAttribute("value") : "";
 
-  const priceField  = panelOrderDiv.querySelector(".price-field");
+  const lengthVal = parseFloat(panelOrderDiv.querySelector(".length").value) || 0;
+  const widthVal = parseFloat(panelOrderDiv.querySelector(".width").value) || 0;
+  const thickVal = parseFloat(panelOrderDiv.querySelector(".thickness").value) || 0;
+  const qtyVal = parseFloat(panelOrderDiv.querySelector(".quantity").value) || 0;
+
+  const priceField = panelOrderDiv.querySelector(".price-field");
 
   if (!typeStof || !lengthVal || !widthVal || !thickVal || !qtyVal) {
     priceField.value = "";
@@ -121,29 +123,44 @@ function calculatePrice(panelOrderDiv) {
   }
 
   const factor = STOF_FACTOR[typeStof] || 1.0;
-  const calc   = factor * ((lengthVal * widthVal * thickVal) / 1000) * qtyVal;
+  const calc = factor * ((lengthVal * widthVal * thickVal) / 1000) * qtyVal;
 
   priceField.value = "€ " + calc.toFixed(2);
 }
 
 /***********************************************************
- * 4) SLIDER CONTROL
+ * 4) LENGTH & WIDTH SLIDERS
  ***********************************************************/
-function initSlider(panelOrderDiv) {
-  const arrowLeft  = panelOrderDiv.querySelector(".arrowLeft");
-  const arrowRight = panelOrderDiv.querySelector(".arrowRight");
-  const printItems = panelOrderDiv.querySelector(".print-items");
+function initSliders(panelOrderDiv) {
+  const lengthSlider = panelOrderDiv.querySelector(".length-slider");
+  const lengthInput = panelOrderDiv.querySelector(".length");
+  const widthSlider = panelOrderDiv.querySelector(".width-slider");
+  const widthInput = panelOrderDiv.querySelector(".width");
 
-  let scrollPos = 0;
-  arrowLeft.addEventListener("click", () => {
-    scrollPos -= 60;
-    if (scrollPos < 0) scrollPos = 0;
-    printItems.style.transform = `translateX(${-scrollPos}px)`;
+  // Sync slider and input for length
+  lengthSlider.addEventListener("input", () => {
+    lengthInput.value = lengthSlider.value;
+    calculatePrice(panelOrderDiv);
   });
-  arrowRight.addEventListener("click", () => {
-    scrollPos += 60;
-    // Could add a max-limit check
-    printItems.style.transform = `translateX(${-scrollPos}px)`;
+
+  lengthInput.addEventListener("input", () => {
+    if (lengthInput.value >= 15 && lengthInput.value <= 250) {
+      lengthSlider.value = lengthInput.value;
+      calculatePrice(panelOrderDiv);
+    }
+  });
+
+  // Sync slider and input for width
+  widthSlider.addEventListener("input", () => {
+    widthInput.value = widthSlider.value;
+    calculatePrice(panelOrderDiv);
+  });
+
+  widthInput.addEventListener("input", () => {
+    if (widthInput.value >= 15 && widthInput.value <= 250) {
+      widthSlider.value = widthInput.value;
+      calculatePrice(panelOrderDiv);
+    }
   });
 }
 
@@ -154,13 +171,11 @@ function initPanelOrder(panelOrderDiv) {
   // Shape
   initShapeSelection(panelOrderDiv);
 
+  // Fabric buttons
+  initFabricButtons(panelOrderDiv);
+
   // Fabric / color => update prints
-  const typeStofSelect = panelOrderDiv.querySelector(".typeStof");
-  const colorChecks    = panelOrderDiv.querySelectorAll(".colorFilter");
-  typeStofSelect.addEventListener("change", () => {
-    updatePrintItems(panelOrderDiv);
-    calculatePrice(panelOrderDiv);
-  });
+  const colorChecks = panelOrderDiv.querySelectorAll(".colorFilter");
   colorChecks.forEach(chk => {
     chk.addEventListener("change", () => {
       updatePrintItems(panelOrderDiv);
@@ -173,8 +188,8 @@ function initPanelOrder(panelOrderDiv) {
     f.addEventListener("input", () => calculatePrice(panelOrderDiv));
   });
 
-  // Slider
-  initSlider(panelOrderDiv);
+  // Initialize sliders
+  initSliders(panelOrderDiv);
 
   // On init, set prints (empty if no stof chosen)
   updatePrintItems(panelOrderDiv);
@@ -183,14 +198,14 @@ function initPanelOrder(panelOrderDiv) {
 /***********************************************************
  * 6) ADD / REMOVE MULTIPLE PANELS
  ***********************************************************/
-const masterForm     = document.getElementById("masterForm");
+const masterForm = document.getElementById("masterForm");
 const addPanelButton = masterForm.querySelector(".add-panel-btn");
 
 addPanelButton.addEventListener("click", () => {
   // Grab the last .panel-order
   const allPanels = masterForm.querySelectorAll(".panel-order");
   const lastPanel = allPanels[allPanels.length - 1];
-  const newPanel  = lastPanel.cloneNode(true);
+  const newPanel = lastPanel.cloneNode(true);
 
   // Clear user input in newPanel
   // shape
@@ -207,7 +222,7 @@ addPanelButton.addEventListener("click", () => {
 
   // dimension fields
   newPanel.querySelector(".length").value = "";
-  newPanel.querySelector(".width").value  = "";
+  newPanel.querySelector(".width").value = "";
   newPanel.querySelector(".thickness").value = "";
   newPanel.querySelector(".quantity").value = 1;
   // price
@@ -244,3 +259,25 @@ masterForm.addEventListener("submit", e => {
   // Additional checks as desired
   alert("Bestelling wordt verzonden (demo)...");
 });
+
+/***********************************************************
+ * 7) THICKNESS BUTTONS
+ ***********************************************************/
+function initThicknessButtons(panelOrderDiv) {
+  const thicknessButtons = panelOrderDiv.querySelectorAll(".thickness-button");
+  const thicknessHidden = panelOrderDiv.querySelector(".thickness");
+
+  thicknessButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      // Clear selected state on all buttons
+      thicknessButtons.forEach(btn => btn.classList.remove("selected"));
+      // Mark the clicked button as selected
+      button.classList.add("selected");
+      // Update the hidden input with the selected thickness
+      thicknessHidden.value = button.dataset.thickness;
+      // Recalculate the price
+      calculatePrice(panelOrderDiv);
+    });
+  });
+}
+

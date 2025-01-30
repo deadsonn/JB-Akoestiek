@@ -7,57 +7,11 @@
 
 /* GLOBAL STYLES */
 body {
-  font-family: Arial, sans-serif;
-  color: #333;
+  font-family: Montserrat, sans-serif;
+  color: #000000;
 }
 
-/* HEADER */
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3.875rem; /* ~62px */
-  background-color: #FAFAFA;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #ddd;
-  z-index: 1001;
-  padding: 0 1rem;
-}
 
-.header-left .logo {
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-
-.header-middle ul,
-.header-right ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-}
-
-.header-middle ul li a,
-.header-right ul li a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.header-middle ul li a:hover,
-.header-right ul li a:hover {
-  color: #555;
-}
-
-.cart-button {
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  font-size: 1.2rem;
-}
 
 /* MAIN CONTENT */
 .main-content {
@@ -188,7 +142,7 @@ body {
   padding: 2rem;
   transition: right 0.3s ease;
   overflow-y: auto;
-  z-index: 1000;
+  z-index: 1005;
 }
 
 .cart-popup.open {
@@ -244,60 +198,3 @@ body {
   cursor: pointer;
 }
 
-/* MEDIA QUERIES */
-
-/* Extra Small Devices (max-width: 576px) */
-@media (max-width: 576px) {
-  .header-middle ul,
-  .header-right ul {
-    gap: 0.5rem;
-    font-size: 0.9rem;
-  }
-
-  .hero {
-    max-height: 300px; /* Adjust for smaller screens */
-  }
-
-  .products-flex {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .product-card {
-    width: 80%;
-  }
-
- 
-}
-
-/* Small Devices (max-width: 768px) */
-@media (max-width: 768px) {
-  .header {
-    padding: 0 0.5rem;
-  }
-
-  .main-content {
-    padding: 0.5rem;
-  }
-}
-
-/* Medium Devices (max-width: 992px) */
-@media (max-width: 992px) {
-  .products-flex {
-    justify-content: flex-start;
-  }
-}
-
-/* Large Devices (max-width: 1200px) */
-@media (max-width: 1200px) {
-  .recommended-products {
-    max-width: 960px;
-  }
-}
-
-/* Extra Large Devices (max-width: 1400px) */
-@media (max-width: 1400px) {
-  .recommended-products {
-    max-width: 1140px;
-  }
-}

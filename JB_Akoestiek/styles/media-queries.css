@@ -1,0 +1,109 @@
+/* MEDIA QUERIES */
+
+/* Extra Small Devices (max-width: 576px) */
+@media (max-width: 576px) {
+ 
+  .header-right ul {
+    gap: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .header-middle, .signIn-button, .signUp-button {
+    display: none;
+  }
+
+  .hero {
+    max-height: 300px; /* Adjust for smaller screens */
+  }
+
+  .products-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-card {
+    width: 80%;
+  }
+
+  
+ 
+}
+
+/* Small Devices (max-width: 768px) */
+@media (max-width: 768px) {
+  .header {
+    padding: 0 0.5rem;
+  }
+
+  .main-content {
+    padding: 0.5rem;
+  }
+
+  .header-middle, .signIn-button, .signUp-button {
+    display: none;
+  }
+  
+  
+}
+
+
+/* Medium Devices (max-width: 1080px) */
+@media (max-width: 1080px) {
+  .products-flex {
+    justify-content: flex-start;
+  }
+
+  .header-middle, .signIn-button, .signUp-button {
+    display: none;
+  }
+  
+  .header-right {
+    
+    justify-content: flex-end;
+  }
+
+  .header-left {
+    
+    justify-content: flex-start;
+    margin-left: 40px;
+  }
+}
+
+/* Medium devices (min-width: 1080px */
+@media (min-width: 1080px) {
+
+#logReg-circle, .hamburger-menu{
+  display: none;
+}
+
+
+}
+
+
+/* Large Devices (max-width: 1200px) */
+@media (max-width: 1200px) {
+  .recommended-products {
+    max-width: 960px;
+  }
+
+  
+
+}
+
+/* Extra Large Devices (max-width: 1400px) */
+@media (max-width: 1400px) {
+  .recommended-products {
+    max-width: 1140px;
+  }
+  
+   
+}
+
+/* Extra Large Devices (max-width: 1400px) */
+@media (min-width: 1400px) {
+  .recommended-products {
+    max-width: 1140px;
+  }
+  
+  
+}

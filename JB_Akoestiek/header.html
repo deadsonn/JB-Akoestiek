@@ -1,0 +1,104 @@
+<body>
+  <header class="header">
+    <div class="header-left">
+      <h1>
+        <a class="logo" href="index.html">LOGO</a>
+      </h1>
+    </div>
+    <nav class="header-middle">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#products">Producten</a></li>
+        <li><a href="panelen-op-maat.html">Op maat</a></li>
+        <li><a href="#about-us">Over ons</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-right">
+      <ul>
+        <li><button class="signIn-button" id="signInButton">Log in</button></li>
+        <li><button class="signUp-button" id="signUpButton">Registreren</button></li>
+        <li>
+          <div class="circle-div" id="logReg-circle">
+            <i class="material-symbols-outlined">account_circle</i>
+          </div>
+        </li>
+        <li>
+          <div class="circle-div">
+            <button class="cart-button" id="cartButton">
+              <i class="material-symbols-outlined">shopping_bag</i>
+            </button>
+          </div>
+        </li>
+        <li>
+          <div class="hamburger-menu" id="hamburgerMenu">
+            <span class="line line1"></span>
+            <span class="line line2"></span>
+            <span class="line line3"></span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Sliding Menu -->
+  <div class="sliding-menu" id="slidingMenu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#products">Producten</a></li>
+      <li><a href="panelen-op-maat.html">Op maat</a></li>
+      <li><a href="#about-us">Over ons</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- New Modal Structure -->
+  <div class="modal" id="authModal">
+    <div class="container" id="container">
+      <div class="form-container sign-up-container">
+        <form action="#">
+          <h1>Create Account</h1>
+          <div class="social-container">
+            <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+            <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+          <span>or use your email for registration</span>
+          <input type="text" placeholder="Name" />
+          <input type="email" placeholder="Email" />
+          <input type="password" placeholder="Password" />
+          <button>Sign Up</button>
+        </form>
+      </div>
+      <div class="form-container sign-in-container">
+        <form action="#">
+          <h1>Sign in</h1>
+          <div class="social-container">
+            <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+            <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+          <span>or use your account</span>
+          <input type="email" placeholder="Email" />
+          <input type="password" placeholder="Password" />
+          <a href="#">Forgot your password?</a>
+          <button>Sign In</button>
+        </form>
+      </div>
+      <div class="overlay-container">
+        <div class="overlay">
+          <div class="overlay-panel overlay-left">
+            <h1>Welcome Back!</h1>
+            <p>To keep connected with us please login with your personal info</p>
+            <button class="ghost" id="signIn">Sign In</button>
+          </div>
+          <div class="overlay-panel overlay-right">
+            <h1>Hello, Friend!</h1>
+            <p>Enter your personal details and start journey with us</p>
+            <button class="ghost" id="signUp">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
