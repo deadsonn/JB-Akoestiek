@@ -280,8 +280,8 @@ button {
 }
 
 .product-card img {
-  width: 100%;
-  height: auto;
+  width: 300px;
+  
   margin-bottom: 0.75rem;
 }
 

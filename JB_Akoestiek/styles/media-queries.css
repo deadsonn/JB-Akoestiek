@@ -47,8 +47,8 @@
 }
 
 
-/* Medium Devices (max-width: 1080px) */
-@media (max-width: 1080px) {
+/* Medium Devices (max-width: 1150px) */
+@media (max-width: 1150px) {
   .products-flex {
     justify-content: flex-start;
   }
@@ -69,8 +69,8 @@
   }
 }
 
-/* Medium devices (min-width: 1080px */
-@media (min-width: 1080px) {
+/* Medium devices (min-width: 1150px */
+@media (min-width: 1150px) {
 
 #logReg-circle, .hamburger-menu{
   display: none;
