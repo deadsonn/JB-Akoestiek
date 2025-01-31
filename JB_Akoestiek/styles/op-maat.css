@@ -186,7 +186,6 @@ input[checkbox]{
 
 
 
-
 /* when checkbox check border button changes color */
 .selector-button:has(input[type="checkbox"]:checked) {
   border: solid 2px rgb(255, 0, 0);
@@ -430,3 +429,5 @@ input[type="number"] {
   text-align: center;
   font-size: 0.875rem;
 }
+
+

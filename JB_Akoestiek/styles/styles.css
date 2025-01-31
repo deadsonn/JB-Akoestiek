@@ -1,3 +1,7 @@
+/* ---------------------------------------------
+   1) RESET & GLOBAL
+--------------------------------------------- */
+
 /* BASIC RESET */
 * {
   margin: 0;
@@ -7,47 +11,226 @@
 
 /* GLOBAL STYLES */
 body {
-  font-family: Montserrat, sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: #000000;
+  background-color: #ffffff; /* Eventueel aanpassen naar jouw voorkeur */
+  line-height: 1.5;
 }
 
+/* Links */
+a {
+  text-decoration: none;
+  color: inherit; /* Of pas aan naar een merk-kleur, bv. #007BFF */
+  transition: color 0.2s ease;
+}
 
+a:hover {
+  color: #007BFF;
+}
 
-/* MAIN CONTENT */
+/* Knoppen */
+button {
+  cursor: pointer;
+  font-family: inherit;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.button-primary,
+.cta-button {
+  display: inline-block;
+  border-radius: 1.5rem;
+	border: 1px solid rgb(6, 6, 86);
+	background-color: rgb(6, 6, 86);
+	color: #FFFFFF;
+	font-size: 1rem;
+	font-weight: bold;
+	padding: 0.6rem 1.3rem;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+	white-space: nowrap;
+}
+
+.button-primary:hover,
+.cta-button:hover {
+  background-color: rgba(6, 6, 86,.7);
+}
+
+/* ---------------------------------------------
+   2) HEADER & NAV
+--------------------------------------------- */
+
+.site-header {
+  position: sticky; /* of 'fixed' als je wilt dat header altijd bovenaan blijft */
+  top: 0;
+  z-index: 100;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Main nav container */
+.main-nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main-nav .logo a {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #007BFF;
+}
+
+/* Nav links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.nav-links a:hover {
+  color: #007BFF;
+  text-decoration: underline;
+}
+
+/* Icons */
+.nav-icons a {
+  margin-left: 1rem;
+  color: #333;
+  font-size: 1.4rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-icons a:hover {
+  color: #007BFF;
+}
+
+/* ---------------------------------------------
+   3) MAIN CONTENT
+--------------------------------------------- */
+
 .main-content {
-  margin-top: 5.125rem; /* ~82px => ensuring space below fixed header */
+  margin-top: 5rem; /* Ruimte onder de header */
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 1rem;
 }
 
-/* HERO */
+/* ---------------------------------------------
+   4) HERO SECTION
+--------------------------------------------- */
 .hero {
   position: relative;
   width: 100%;
-  height: 300px; /* Zorgt dat de slides altijd dezelfde hoogte hebben */
+  height: 400px; /* Iets meer hoogte voor een hero */
   overflow: hidden;
+  margin-bottom: 2rem;
 }
+
 .hero-slide {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 24rem;
+  height: 100%;
   transition: transform 0.5s ease;
 }
 
 .hero-slide img {
-  width: 100%; 
-  height: 100%; 
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-/* MISSION STATEMENT */
+/* Tekst boven de hero-afbeelding */
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  text-align: center;
+  padding: 1rem 2rem;
+  background-color: rgba(0,0,0,0.4);
+  border-radius: 0.5rem;
+}
+
+.hero-text h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+/* ---------------------------------------------
+   5) USP / VOORDELEN SECTION
+--------------------------------------------- */
+.usp-section {
+  width: 100%;
+  max-width: 1200px;
+  padding: 2rem 1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.usp-section h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.usp-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.usp-item {
+  flex: 1 1 250px;
+  max-width: 300px;
+  text-align: center;
+  padding: 1rem;
+}
+
+.usp-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.usp-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.usp-item p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* ---------------------------------------------
+   6) MISSION STATEMENT
+--------------------------------------------- */
 .mission-statement {
   text-align: center;
   margin-bottom: 2rem;
+  max-width: 800px;
 }
 
 .mission-statement p {
@@ -64,62 +247,216 @@ body {
   text-decoration: underline;
 }
 
-/* CUSTOM PANELS SECTION */
-.custom-panels {
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.custom-panels h2 {
-  margin-bottom: 1rem;
-}
-
-/* PRODUCT SEARCH */
-.product-search {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.product-search input[type="search"] {
-  padding: 0.5rem;
-  margin-right: 0.5rem;
-}
-
-/* RECOMMENDED PRODUCTS */
+/* ---------------------------------------------
+   7) RECOMMENDED PRODUCTS
+--------------------------------------------- */
 .recommended-products {
   width: 100%;
   max-width: 1200px;
   margin-bottom: 2rem;
+  text-align: center;
+}
+
+.recommended-products h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .products-flex {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.5rem;
   justify-content: center;
 }
 
 .product-card {
   background-color: #f5f5f5;
-  padding: 1rem;
-  width: 180px;
+  padding: 1rem 1rem;
+  width: auto;
+  min-width: 300px;
   text-align: center;
   border: 1px solid #ddd;
+  border-radius: 0.5rem;
 }
 
-/* ABOUT SECTION */
+.product-card img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 0.75rem;
+}
+
+.product-card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 0.75rem;
+}
+
+/* ---------------------------------------------
+   8) CUSTOM PANELS SECTION
+--------------------------------------------- */
+.custom-panels {
+  margin-bottom: 2rem;
+  text-align: center;
+  max-width: 1200px;
+}
+
+.custom-panels h2 {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+.custom-panels p {
+  max-width: 600px;
+  margin: 0.5rem auto;
+}
+
+/* ---------------------------------------------
+   9) TESTIMONIALS / REVIEWS
+--------------------------------------------- */
+.testimonials {
+  width: 100%;
+  max-width: 1000px;
+  margin-bottom: 2rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+.testimonials h2 {
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.testimonial-item {
+  max-width: 400px;
+  background-color: #fafafa;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #eee;
+}
+
+.testimonial-item blockquote {
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.testimonial-item .author {
+  font-weight: 600;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/* ---------------------------------------------
+   10) ABOUT SECTION
+--------------------------------------------- */
 .about-section {
   width: 100%;
   max-width: 800px;
   margin-bottom: 2rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.about-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .about-section ul {
   list-style: disc;
-  margin-left: 1.5rem;
+  text-align: left;
+  margin: 1rem auto;
+  max-width: 600px;
+  line-height: 1.4;
+  padding-left: 1.5rem;
 }
 
-/* FOOTER */
+/* ---------------------------------------------
+   11) SERVICES SECTION (DIENSTEN)
+--------------------------------------------- */
+.services-section {
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 2rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+.services-section h2 {
+  margin-bottom: 1.5rem;
+}
+
+.services-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.service-card {
+  flex: 1 1 250px;
+  max-width: 300px;
+  background-color: #f8f8f8;
+  border: 1px solid #eee;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.service-card h3 {
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* ---------------------------------------------
+   12) NIEUWSBRIEF CTA
+--------------------------------------------- */
+.newsletter-cta {
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 2rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+.newsletter-cta h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.newsletter-form {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.newsletter-form input[type="email"] {
+  padding: 0.5rem;
+  font-size: 0.95rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+}
+
+/* ---------------------------------------------
+   13) FOOTER
+--------------------------------------------- */
 .footer {
   width: 100%;
   background-color: #FAFAFA;
@@ -129,9 +466,45 @@ body {
   margin-top: auto;
 }
 
+/* Footer layout */
+.footer-top {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
 
+.footer-top p {
+  text-align: center;
+}
 
-/* PANELEN OP MAAT PAGE */
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-links a {
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* ---------------------------------------------
+   14) PANELEN OP MAAT PAGE (Bestaande Code)
+--------------------------------------------- */
 .custom-panels-form {
   max-width: 600px;
   width: 100%;
@@ -164,5 +537,32 @@ body {
   padding: 0.75rem 1.5rem;
   border: none;
   cursor: pointer;
+  border-radius: 0.25rem;
 }
 
+/* ---------------------------------------------
+   15) MEDIA QUERIES (Mobiele optimalisatie)
+--------------------------------------------- */
+@media (max-width: 768px) {
+  .main-nav {
+    flex-wrap: wrap;
+  }
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+  .hero {
+    height: 250px;
+  }
+  .usp-container,
+  .products-flex,
+  .services-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-top,
+  .footer-bottom {
+    flex-direction: column;
+  }
+}

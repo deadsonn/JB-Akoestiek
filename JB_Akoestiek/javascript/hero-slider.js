@@ -24,3 +24,4 @@ updateSlides();
 
 // Verschuif elke 5 seconden naar de volgende slide
 setInterval(nextSlide, 5000);
+

@@ -26,104 +26,229 @@
   <main class="main-content">
     
     <!-- HERO (Vertical Slider Placeholder) -->
-    <section class="hero">
+    <section class="hero" aria-label="Promotionele banners">
+      <!-- hero slide 1 -->
       <div class="hero-slide">
-        <img src="https://images.pexels.com/photos/7191996/pexels-photo-7191996.jpeg?auto=compress&cs=tinysrgb&h=600" alt="Hero Slide 1" />
+        <img src="https://acoustek.com.au/wp-content/uploads/2019/09/Acoustek_Porto_Collection_Main_Image.jpg" alt="Hero Slide 1" />
+          <div class="hero-text">
+            <h1>Verbeter je akoestiek met stijl</h1>
+            <p>Akoestische oplossingen voor elke ruimte</p>
+            <a href="panelen-op-maat.html" class="cta-button">Stel je paneel samen</a>
+          </div>
       </div>
+      <!-- hero slide 2 -->
       <div class="hero-slide">
-        <img src="https://images.pexels.com/photos/6716370/pexels-photo-6716370.jpeg?auto=compress&cs=tinysrgb&h=600" alt="Hero Slide 2" />
+        <img src="https://cdn.shopify.com/s/files/1/0591/0593/5520/t/1/assets/glacierblue-kantine-6l_yCh5.jpg?v=1667407945272" alt="Hero Slide 2" />
+        <div class="hero-text">
+          <h1>Altijd scherp geprijsd!</h1>
+          <p>Bekijk ons volledige assortiment</p>
+          <a href="producten.html" class="cta-button">Alle producten</a>
+        </div>
       </div>
+      
+      <!-- hero slide 3 -->
       <div class="hero-slide">
-        <img src="https://images.pexels.com/photos/7688177/pexels-photo-7688177.jpeg?auto=compress&cs=tinysrgb&h=600" alt="Hero Slide 3" />
+        <img src="https://decormania.eu/cdn/shop/files/flow-acoustic-soft-3d-wall-panel-fluffo-11.jpg?v=1720074109" alt="Hero Slide 3" />
+        <div class="hero-text">
+          <h1>Acties en Kortingscodes</h1>
+          <p>Gebruik de code JBDEAL10 voor 10% korting</p>
+          <a href="xxx.html" class="cta-button">Toevoegen aan winkelwagen</a>
+        </div>
       </div>
       <!-- Add vertical slider functionality via JavaScript if needed -->
     </section>
 
-    <!-- Mission Statement Section -->
-    <section class="mission-statement">
+    
+    <!-- 2) USP / Voordelen -->
+    <section class="usp-section" aria-label="Voordelen van JB Akoestiek">
+      <h2>Waarom JB Akoestiek?</h2>
+      <div class="usp-container">
+        <!-- A. Kwaliteitskeurmerk Akoestische panelen oid -->
+        <div class="usp-item">
+          <img src="images/index/quality.png" alt="USP1" />
+          <h3>Hoogwaardige kwaliteit</h3>
+          <p>Onze panelen zijn gemaakt van premium materialen, met oog voor detail en duurzaamheid.</p>
+        </div>
+
+        <!-- B. Handgemaakt -->
+        <div class="usp-item" >
+          
+          <img src="images/index/handmade2.png" alt="USP2" class="USP2"/>
+          <h3>Op maat gemaakt</h3>
+          <p>Vorm, kleur of print: kies hoe jij jouw ruimte wilt laten klinken én ogen.</p>
+        </div>
+
+        <!-- C. Snelle bezorging -->
+        <div class="usp-item">
+          <img src="images/index/van.png" alt="USP3" />
+          <h3>Snelle levertijd</h3>
+          <p>Wij hanteren korte productietijden en leveren snel door heel Nederland en België.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3) Missie Statement (uit je voorbeeld) -->
+    <section class="mission-statement" aria-label="Onze missie">
       <h2>Onze missie</h2>
       <p>
-        Wij leveren hoogwaardige akoestische panelen die zorgen voor een betere geluidsbeleving 
-        in iedere ruimte, van conferentiezaal tot studio. 
+        Wij leveren hoogwaardige akoestische panelen die zorgen voor een betere
+        geluidsbeleving in iedere ruimte, van conferentiezaal tot studio. 
       </p>
       <a href="about.html" class="read-more">Lees meer &raquo;</a>
     </section>
 
-    <!-- Panelen op maat / Acties / Kortingscode -->
-    <section class="custom-panels">
+    <!-- 4) Uitgelichte producten / Recommended Products -->
+    <section class="recommended-products" id="producten" aria-label="Aanbevolen producten">
+      <h2>Aanbevolen</h2>
+      <div class="products-flex">
+        <div class="product-card">
+          <img src="https://via.placeholder.com/200" alt="Product 1" />
+          <h3>Paneel Basic</h3>
+          <p class="price">€ 59,99</p>
+          <button type="button" class="button-primary">In Winkelmand</button>
+        </div>
+        <div class="product-card">
+          <img src="https://via.placeholder.com/200" alt="Product 2" />
+          <h3>Paneel Deluxe</h3>
+          <p class="price">€ 89,99</p>
+          <button type="button" class="button-primary">In Winkelmand</button>
+        </div>
+        <div class="product-card">
+          <img src="https://via.placeholder.com/200" alt="Product 3" />
+          <h3>Paneel XL</h3>
+          <p class="price">€ 129,99</p>
+          <button type="button" class="button-primary">In Winkelmand</button>
+        </div>
+      </div>
+      <p class="more-products-link">
+        <a href="all-products.html">Alle producten bekijken &raquo;</a>
+      </p>
+    </section>
+
+    <!-- 5) Panelen op maat (of Custom Panels) + acties/kortingen -->
+    <section class="custom-panels" aria-label="Panelen op maat samenstellen">
       <h2>Panelen op maat</h2>
       <p>
         Laat je akoestische panelen volledig op maat maken. Bepaal vorm, afmetingen, 
         kleur of print. 
       </p>
-      <h3>Acties</h3>
-      <p>Gebruik onze speciale kortingscodes voor tijdelijke aanbiedingen!</p>
+      <a href="panelen-op-maat.html" class="cta-button">Stel hier je paneel samen</a>
+      <h3>Acties en Kortingscodes</h3>
+      <p>
+        Profiteer nu van onze tijdelijke acties! Gebruik de code 
+        <strong>JBDEAL10</strong> voor 10% korting op je eerste bestelling.
+      </p>
     </section>
 
-    <!-- Search & Product Info -->
-    <section class="product-search">
-      <h2>Zoekfunctie producten</h2>
-      <input type="search" placeholder="Zoek naar producten..." />
-      <button type="button">Zoek</button>
-      <p>Bestel in een paar klikken panelen op maat. <a href="panelen-op-maat.html">Klik hier</a> voor meer info!</p>
+    <!-- 6) Testimonial / Klantenreviews -->
+    <section class="testimonials" aria-label="Klantenreviews">
+      <h2>Ervaringen van onze klanten</h2>
+      <div class="testimonial-list">
+        <article class="testimonial-item">
+          <blockquote>
+            “Een wereld van verschil in de akoestiek van mijn kantoor. Echt top!”
+          </blockquote>
+          <p class="author">- Jan de Vries</p>
+        </article>
+        <article class="testimonial-item">
+          <blockquote>
+            “Onze thuisstudio klinkt eindelijk professioneel. Aanrader!”
+          </blockquote>
+          <p class="author">- Maria Janssen</p>
+        </article>
+      </div>
     </section>
 
-    <!-- Recommended Products -->
-    <section class="recommended-products" id="products">
-      <h2>Aanbevolen</h2>
-      <div class="products-flex">
-        <div class="product-card">
-          <img src="https://via.placeholder.com/200" alt="Product 1">
-          <h3>Product 1</h3>
+    <!-- 7) Over ons -->
+    <section class="about-section" id="about-us" aria-label="Over JB Akoestiek">
+      <h2>Over JB Akoestiek</h2>
+      <ul>
+        <li>Wij zijn gespecialiseerd in akoestische oplossingen</li>
+        <li>Gebruiken duurzaam, circulair materiaal</li>
+        <li>Alle panelen zijn maatwerk</li>
+        <li>We beschikken over alle benodigde certificaten en keurmerken</li>
+      </ul>
+      <p>
+        <a href="about.html">Meer over ons bedrijf &raquo;</a>
+      </p>
+    </section>
+
+    <!-- 8) Eventuele Diensten-sectie -->
+    <section id="diensten" class="services-section" aria-label="Onze diensten">
+      <h2>Diensten</h2>
+      <div class="services-flex">
+        <div class="service-card">
+          <h3>Advies & Meting</h3>
+          <p>
+            Laat onze experts langskomen om de akoestische eigenschappen
+            van uw ruimte te meten en advies te geven.
+          </p>
         </div>
-        <div class="product-card">
-          <img src="https://via.placeholder.com/200" alt="Product 2">
-          <h3>Product 2</h3>
+        <div class="service-card">
+          <h3>Montageservice</h3>
+          <p>
+            Geen zorgen over installatie. Wij bieden professionele
+            montageservice van onze panelen aan huis of op kantoor.
+          </p>
         </div>
-        <div class="product-card">
-          <img src="https://via.placeholder.com/200" alt="Product 3">
-          <h3>Product 3</h3>
-        </div>
-        <div class="product-card">
-          <img src="https://via.placeholder.com/200" alt="Product 4">
-          <h3>Product 4</h3>
-        </div>
-        <div class="product-card">
-          <img src="https://via.placeholder.com/200" alt="Product 5">
-          <h3>Product 5</h3>
-        </div>
-        <div class="product-card">
-          <img src="https://via.placeholder.com/200" alt="Product 6">
-          <h3>Product 6</h3>
+        <div class="service-card">
+          <h3>Projectbegeleiding</h3>
+          <p>
+            Bij grotere projecten (theaters, kantoren) verzorgen wij
+            het gehele traject van plan tot oplevering.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- Over Ons -->
-    <section class="about-section" id="about-us">
-      <h2>Over</h2>
-      <ul>
-        <li>Nut van panelen</li>
-        <li>Duurzaam (circulair) materiaal</li>
-        <li>Maatwerk</li>
-        <li>Certificaten</li>
-      </ul>
+    <!-- 9) Nieuwsbrief / Contact CTA -->
+    <section class="newsletter-cta" aria-label="Blijf op de hoogte">
+      <h2>Schrijf je in voor onze nieuwsbrief</h2>
+      <p>
+        Krijg als eerste nieuws over aanbiedingen, tips over geluidsisolatie 
+        en nieuwe producten.
+      </p>
+      <form action="#" method="post" class="newsletter-form">
+        <label for="newsletter-email" class="visually-hidden">E-mailadres</label>
+        <input
+          type="email"
+          id="newsletter-email"
+          name="newsletter-email"
+          placeholder="Jouw e-mailadres"
+          required
+        />
+        <button type="submit" class="button-primary">Aanmelden</button>
+      </form>
     </section>
-
   </main>
 
-  <!-- FOOTER -->
-  <footer class="footer" id="contact">
-    <p>Adres: Voorbeeldstraat 123, 1234 AB, Stad</p>
-    <p>Telefoon: 012-3456789 | E-mail: info@jbakoestiek.nl</p>
-    <p>&copy; 2025 JB Akoestiek</p>
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="contact" aria-label="Voettekst">
+    <div class="footer-top">
+      <p><strong>JB Akoestiek</strong><br>
+        Voorbeeldstraat 123,<br> 1234 AB, Stad</p>
+      <p>Tel: 012-3456789<br>
+         E-mail: <a href="mailto:info@jbakoestiek.nl">info@jbakoestiek.nl</a></p>
+    </div>
+
+    <div class="footer-bottom">
+      <ul class="footer-links">
+        <li><a href="algemene-voorwaarden.html">Algemene Voorwaarden</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="retouren.html">Retouren</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+      <p>&copy; <span id="year"></span> JB Akoestiek. Alle rechten voorbehouden.</p>
+    </div>
   </footer>
 
-  
+  <!-- ===== SCRIPTS ===== -->
   <script src="javascript/header.js"></script>
   <script src="javascript/hero-slider.js"></script>
-  <script src="javascript/cart-popup.js" ></script>
-</body> 
-  
-  
+  <script src="javascript/cart-popup.js"></script>
+  <script>
+    // Dynamically set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>

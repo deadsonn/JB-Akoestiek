@@ -17,8 +17,8 @@ const PRINTS_DB = [
 /** EXAMPLE STOF FACTORS for price calc **/
 const STOF_FACTOR = {
   Katoen: 1.2,
-  Polyester: 0.9,
-  Stof3: 1.4,
+  Polyester: 1.5,
+  Stof3: 1.8,
   Stof4: 2.0
 };
 
@@ -35,6 +35,8 @@ function initShapeSelection(panelOrderDiv) {
       shapeOptions.forEach(o => o.classList.remove("selected"));
       opt.classList.add("selected");
       shapeHidden.value = opt.dataset.shape;
+      // Recalculate price in case we now have a shape
+      calculatePrice(panelOrderDiv);
     });
   });
 }
@@ -47,6 +49,9 @@ function updatePrintItems(panelOrderDiv) {
   const colorChecks = panelOrderDiv.querySelectorAll(".colorFilter:checked");
   const printsWrap = panelOrderDiv.querySelector(".print-items");
   const printHidden = panelOrderDiv.querySelector(".printHidden");
+
+  // Remember which print was previously selected (if any)
+  const currentlySelectedAlt = printHidden.value;
 
   // Get the selected fabric
   const selectedFabricButton = Array.from(typeStofButtons).find(btn => btn.classList.contains("selected"));
@@ -62,20 +67,38 @@ function updatePrintItems(panelOrderDiv) {
     return true;
   });
 
-  // Clear existing prints
+  // Clear existing prints in the slider
   printsWrap.innerHTML = "";
-  printHidden.value = "";
 
   // Rebuild items
   filtered.forEach(printObj => {
     const div = document.createElement("div");
     div.className = "print-item";
     div.innerHTML = `<img src="${printObj.src}" alt="${printObj.alt}" />`;
+
+    // If this print was already selected, reselect it
+    if (printObj.alt === currentlySelectedAlt) {
+      div.classList.add("selected");
+    }
+
     div.addEventListener("click", () => {
       // De-select siblings
       printsWrap.querySelectorAll(".print-item").forEach(i => i.classList.remove("selected"));
       div.classList.add("selected");
       printHidden.value = printObj.alt;
+      
+      // Update fabric type based on selected print
+      const fabricType = printObj.typeStof;
+      typeStofButtons.forEach(btn => {
+        if (btn.getAttribute("value") === fabricType) {
+          btn.classList.add("selected");
+        } else {
+          btn.classList.remove("selected");
+        }
+      });
+      
+      // Recalculate price with the new fabric type
+      calculatePrice(panelOrderDiv);
     });
     printsWrap.appendChild(div);
   });
@@ -86,15 +109,14 @@ function initFabricButtons(panelOrderDiv) {
 
   typeStofButtons.forEach(button => {
     button.addEventListener("click", (e) => {
-      e.preventDefault(); // Prevent form submission
+      e.preventDefault(); // ensure no form submit
       // Clear selection on all buttons
       typeStofButtons.forEach(btn => btn.classList.remove("selected"));
       button.classList.add("selected");
       
       // Update prints based on the selected fabric
       updatePrintItems(panelOrderDiv);
-      
-      // Recalculate price since fabric type affects it
+      // Recalculate price in case fabric factor changes
       calculatePrice(panelOrderDiv);
     });
   });
@@ -102,8 +124,10 @@ function initFabricButtons(panelOrderDiv) {
   // Initialize color filter listeners
   const colorChecks = panelOrderDiv.querySelectorAll(".colorFilter");
   colorChecks.forEach(chk => {
+    // Just recalc on change; doesn't submit form
     chk.addEventListener("change", () => {
       updatePrintItems(panelOrderDiv);
+      calculatePrice(panelOrderDiv);
     });
   });
 
@@ -142,17 +166,24 @@ function initPrintSlider(panelOrderDiv) {
  * 4) PRICE CALC
  ***********************************************************/
 function calculatePrice(panelOrderDiv) {
-  const typeStofButtons = panelOrderDiv.querySelectorAll(".typeStof .selector-button");
-  const selectedFabricButton = Array.from(typeStofButtons).find(btn => btn.classList.contains("selected"));
-  
-  // If no fabric is selected, clear price and return
-  if (!selectedFabricButton) {
+  // NEW: shape must be selected
+  const shapeValue = panelOrderDiv.querySelector(".shapeHidden").value;
+  if (!shapeValue) {
+    // If no shape is selected, clear the price and exit
     panelOrderDiv.querySelector(".price-field").value = "";
     return;
   }
 
-  const typeStof = selectedFabricButton.getAttribute("value");
-  if (!typeStof || !STOF_FACTOR[typeStof]) {
+  // Continue the existing logic
+  const selectedPrint = panelOrderDiv.querySelector(".print-item.selected");
+  if (!selectedPrint) {
+    panelOrderDiv.querySelector(".price-field").value = "";
+    return;
+  }
+
+  const printAlt = selectedPrint.querySelector("img").alt;
+  const printData = PRINTS_DB.find(p => p.alt === printAlt);
+  if (!printData || !STOF_FACTOR[printData.typeStof]) {
     panelOrderDiv.querySelector(".price-field").value = "";
     return;
   }
@@ -164,12 +195,14 @@ function calculatePrice(panelOrderDiv) {
 
   const priceField = panelOrderDiv.querySelector(".price-field");
 
+  // If any dimension or quantity is missing, no price
   if (!lengthVal || !widthVal || !thickVal || !qtyVal) {
     priceField.value = "";
     return;
   }
 
-  const factor = STOF_FACTOR[typeStof];
+  const factor = STOF_FACTOR[printData.typeStof];
+  // Example formula
   const calc = factor * ((lengthVal * widthVal * thickVal) / 1000) * qtyVal;
 
   priceField.value = "€ " + calc.toFixed(2);
@@ -220,7 +253,7 @@ function initThicknessButtons(panelOrderDiv) {
 
   thicknessButtons.forEach(button => {
     button.addEventListener("click", (e) => {
-      e.preventDefault();
+      e.preventDefault(); // ensures no form submission
       // Clear selected state on all buttons
       thicknessButtons.forEach(btn => btn.classList.remove("selected"));
       // Mark the clicked button as selected
@@ -301,6 +334,7 @@ addPanelButton.addEventListener("click", () => {
 // Initialize the first panel
 const firstPanel = masterForm.querySelector(".panel-order");
 initPanelOrder(firstPanel);
+// Hide remove button on the very first panel
 firstPanel.querySelector(".remove-panel-btn").style.display = "none";
 
 // Form submission handler
