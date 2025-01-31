@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/products.css">
+    
+    <link rel="stylesheet" href="styles/op-maat.css">
+    <link rel="stylesheet" href="styles/header.css"/>
+    <link rel="stylesheet" href="styles/media-queries.css"/>
+</head>
+<body>
+   <!-- HEADER: linked to header.html using header.js -->
+  <div id="header-container"></div>
+  
+    <!-- Navigation placeholder -->
+    <nav class="navigation"></nav>
+
+    <main class="container-products">
+        <!-- Search Box -->
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search products...">
+            <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+        </div>
+
+        <div class="content-wrapper">
+            <!-- Product Grid -->
+            <section class="products-grid" id="products" aria-label="Products">
+                <!-- Products will be inserted here by JavaScript -->
+            </section>
+
+            <!-- Filter Sidebar -->
+            <aside class="filter-sidebar">
+                <h2>Filters</h2>
+                
+                <div class="filter-section">
+                    <h3>Price Range</h3>
+                    <input type="range" id="priceRange" min="0" max="200" step="10">
+                    <div class="price-labels">
+                        <span>€0</span>
+                        <span>€200</span>
+                    </div>
+                </div>
+
+                <div class="filter-section">
+                    <h3>Categories</h3>
+                    <label class="checkbox-label">
+                        <input type="checkbox"> Category 1
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox"> Category 2
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox"> Category 3
+                    </label>
+                </div>
+
+                <div class="filter-section">
+                    <h3>Sort By</h3>
+                    <select id="sortSelect">
+                        <option value="price-asc">Price: Low to High</option>
+                        <option value="price-desc">Price: High to Low</option>
+                        <option value="newest">Newest First</option>
+                    </select>
+                </div>
+            </aside>
+        </div>
+    </main>
+    <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="contact" aria-label="Voettekst">
+    <div class="footer-top">
+      <p><strong>JB Akoestiek</strong><br>
+        Voorbeeldstraat 123,<br> 1234 AB, Stad</p>
+      <p>Tel: 012-3456789<br>
+         E-mail: <a href="mailto:info@jbakoestiek.nl">info@jbakoestiek.nl</a></p>
+    </div>
+
+    <div class="footer-bottom">
+      <ul class="footer-links">
+        <li><a href="algemene-voorwaarden.html">Algemene Voorwaarden</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="retouren.html">Retouren</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+      <p>&copy; <span id="year"></span> JB Akoestiek. Alle rechten voorbehouden.</p>
+    </div>
+  </footer>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script src="javascript/header.js"></script>
+  
+  <script src="javascript/cart-popup.js"></script>
+   <script src="javascript/products.js"></script>
+   <script>
+    // Dynamically set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+   
+</body>
+</html>

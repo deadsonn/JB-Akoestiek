@@ -1,0 +1,59 @@
+/* ---------------------------------------------
+   1) RESET & GLOBAL
+--------------------------------------------- */
+
+/* BASIC RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* GLOBAL STYLES */
+body {
+  font-family: "Montserrat", sans-serif;
+  color: #000000;
+  background-color: #ffffff; /* Eventueel aanpassen naar jouw voorkeur */
+  line-height: 1.5;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: inherit; /* Of pas aan naar een merk-kleur, bv. #007BFF */
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #007BFF;
+}
+
+/* Knoppen */
+button {
+  cursor: pointer;
+  font-family: inherit;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.button-primary,
+.cta-button {
+  display: inline-block;
+  border-radius: 1.5rem;
+	border: 1px solid rgb(6, 6, 86);
+	background-color: rgb(6, 6, 86);
+	color: #FFFFFF;
+	font-size: 1rem;
+	font-weight: bold;
+	padding: 0.6rem 1.3rem;
+  margin-bottom: .5rem;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+	white-space: nowrap;
+}
+
+.button-primary:hover,
+.cta-button:hover {
+  background-color: rgba(6, 6, 86,.7);
+}
+
