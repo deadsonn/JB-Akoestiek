@@ -4,6 +4,8 @@
 
 /* BASIC RESET */
 * {
+  scroll-behavior: smooth;
+  scroll-padding: 10rem;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -15,8 +17,18 @@ body {
   color: #000000;
   background-color: #ffffff; /* Eventueel aanpassen naar jouw voorkeur */
   line-height: 1.5;
+  
+  
 }
 
+main {
+  
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+}
 /* Links */
 a {
   text-decoration: none;
@@ -57,3 +69,14 @@ button {
   background-color: rgba(6, 6, 86,.7);
 }
 
+.newsletter-cta{
+  margin-top: 40px;
+  background-color: #f4f4f4;
+  padding: 5rem 18rem;
+  width: auto;
+  min-width: 300px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  
+}

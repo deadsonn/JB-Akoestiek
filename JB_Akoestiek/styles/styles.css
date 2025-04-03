@@ -64,7 +64,7 @@
 --------------------------------------------- */
 
 .main-content {
-  margin-top: 5rem; /* Ruimte onder de header */
+  margin-top: 6.25rem; /* Ruimte onder de header */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -79,7 +79,7 @@
   width: 100%;
   height: 400px; /* Iets meer hoogte voor een hero */
   overflow: hidden;
-  margin-bottom: 2rem;
+  margin-bottom: 6.25rem;
 }
 
 .hero-slide {
@@ -129,7 +129,7 @@
   max-width: 1200px;
   padding: 2rem 1rem;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 6.25rem;
 }
 
 .usp-section h2 {
@@ -173,7 +173,7 @@
 --------------------------------------------- */
 .mission-statement {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 6.25rem;
   max-width: 800px;
 }
 
@@ -182,7 +182,7 @@
 }
 
 .read-more {
-  color: #007BFF;
+  color: #0c1723;
   text-decoration: none;
   font-weight: bold;
 }
@@ -197,8 +197,9 @@
 .recommended-products {
   width: 100%;
   max-width: 1200px;
-  margin-bottom: 2rem;
+  margin-bottom: 3.25rem;
   text-align: center;
+  
 }
 
 .recommended-products h2 {
@@ -249,154 +250,88 @@
 }
 
 .more-products-link {
-  margin-top: 1rem;
+  margin-top: 3rem;
 }
 
 /* ---------------------------------------------
    8) CUSTOM PANELS SECTION
 --------------------------------------------- */
+
+
 .custom-panels {
-  margin-bottom: 2rem;
+  background-color: #f4f4f4;
+  padding: 5rem 14rem;
+  width: auto;
+  min-width: 300px;
   text-align: center;
-  max-width: 1200px;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  margin-bottom: 6.25rem;
+  
 }
 
 .custom-panels h2 {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   font-size: 1.4rem;
 }
 
 .custom-panels p {
   max-width: 600px;
-  margin: 0.5rem auto;
+
+  padding-bottom: 1.5rem;
 }
+
 
 /* ---------------------------------------------
-   9) TESTIMONIALS / REVIEWS
+   8.5) OFFERTE / Quote
 --------------------------------------------- */
-.testimonials {
-  width: 100%;
-  max-width: 1000px;
-  margin-bottom: 2rem;
+.quote {
+  background-color: #f4f4f4;
+  padding: 5rem 24rem;
+  width: auto;
+  min-width: 300px;
   text-align: center;
-  padding: 1rem;
-}
-
-.testimonials h2 {
-  margin-bottom: 1.5rem;
-}
-
-.testimonial-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-}
-
-.testimonial-item {
-  max-width: 400px;
-  background-color: #fafafa;
-  padding: 1rem;
+  border: 1px solid #ddd;
   border-radius: 0.5rem;
-  border: 1px solid #eee;
+  margin-bottom: 6.25rem;
+  
 }
 
-.testimonial-item blockquote {
-  font-style: italic;
-  margin-bottom: 0.5rem;
-}
-
-.testimonial-item .author {
-  font-weight: 600;
-  color: #555;
-  font-size: 0.9rem;
-}
-
-/* ---------------------------------------------
-   10) ABOUT SECTION
---------------------------------------------- */
-.about-section {
-  width: 100%;
-  max-width: 800px;
-  margin-bottom: 2rem;
-  padding: 1rem;
-  text-align: center;
-}
-
-.about-section h2 {
-  font-size: 1.5rem;
+.quote h2 {
   margin-bottom: 1rem;
+  font-size: 1.4rem;
 }
 
-.about-section ul {
-  list-style: disc;
-  text-align: left;
-  margin: 1rem auto;
+.quote p {
   max-width: 600px;
-  line-height: 1.4;
-  padding-left: 1.5rem;
+
+  padding-bottom: 1.5rem;
 }
 
-/* ---------------------------------------------
-   11) SERVICES SECTION (DIENSTEN)
---------------------------------------------- */
-.services-section {
-  width: 100%;
-  max-width: 1200px;
-  margin-bottom: 2rem;
-  text-align: center;
-  padding: 1rem;
-}
 
-.services-section h2 {
-  margin-bottom: 1.5rem;
-}
 
-.services-flex {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
-}
-
-.service-card {
-  flex: 1 1 250px;
-  max-width: 300px;
-  background-color: #f8f8f8;
-  border: 1px solid #eee;
-  border-radius: 0.5rem;
-  padding: 1rem;
-  text-align: center;
-}
-
-.service-card h3 {
-  margin-bottom: 0.75rem;
-  font-size: 1.1rem;
-}
-
-.service-card p {
-  font-size: 0.95rem;
-  color: #555;
-}
 
 /* ---------------------------------------------
    12) NIEUWSBRIEF CTA
 --------------------------------------------- */
 .newsletter-cta {
-  width: 100%;
-  max-width: 800px;
-  margin-bottom: 2rem;
+  background-color: #f4f4f4;
+  padding: 5rem 10.8rem;
+  width: auto;
+  min-width: 300px;
   text-align: center;
-  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  margin-bottom: 6.25rem;
 }
 
 .newsletter-cta h2 {
   font-size: 1.4rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.5;
 }
 
 .newsletter-form {
-  margin-top: 1rem;
+  
   display: flex;
   gap: 0.5rem;
   justify-content: center;

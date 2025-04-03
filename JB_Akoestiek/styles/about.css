@@ -1,0 +1,107 @@
+/* ---------------------------------------------
+   9) TESTIMONIALS / REVIEWS
+--------------------------------------------- */
+.testimonials {
+  width: 100%;
+  max-width: 1000px;
+  margin-bottom: 2rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+.testimonials h2 {
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.testimonial-item {
+  max-width: 400px;
+  background-color: #fafafa;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #eee;
+}
+
+.testimonial-item blockquote {
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.testimonial-item .author {
+  font-weight: 600;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/* ---------------------------------------------
+   10) ABOUT SECTION
+--------------------------------------------- */
+.about-section {
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.about-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.about-section ul {
+  list-style: disc;
+  text-align: left;
+  margin: 1rem auto;
+  max-width: 600px;
+  line-height: 1.4;
+  padding-left: 1.5rem;
+}
+
+/* ---------------------------------------------
+   11) SERVICES SECTION (DIENSTEN)
+--------------------------------------------- */
+.services-section {
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 2rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+.services-section h2 {
+  margin-bottom: 1.5rem;
+}
+
+.services-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.service-card {
+  flex: 1 1 250px;
+  max-width: 300px;
+  background-color: #f8f8f8;
+  border: 1px solid #eee;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.service-card h3 {
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  color: #555;
+}

@@ -3,14 +3,14 @@
   
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=account_circle,shopping_bag,shopping_cart" />
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body>
   <header class="header">
     <div class="header-left">
       <h1>
-        <a class="logo" href="index.html">LOGO</a>
+        <a class="logo" href="index.html"><img src="images/header/Acoustique.png"></a>
       </h1>
     </div>
     <nav class="header-middle">
@@ -18,7 +18,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="products.html">Producten</a></li>
         <li><a href="panelen-op-maat.html">Op maat</a></li>
-        <li><a href="#about-us">Over ons</a></li>
+        <li><a href="about.html">Over ons</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -33,7 +33,7 @@
         </li>
         <li>
           <div class="circle-div" id="cartButton">
-            <button class="cart-button" >
+            <button class="cart-button">
               <i class="material-symbols-outlined">shopping_bag</i>
             </button>
           </div>
@@ -48,26 +48,10 @@
       </ul>
     </div>
   </header>
-</header>
 
   <!-- RIGHT-SIDE POPUP (Shopping Cart) -->
-  <aside class="cart-popup" id="cartPopup">
-    <h2>Bestelling afronden</h2>
-    <div class="order-summary">
-      <p>Samenvatting bestelling</p>
-      <p>Kosten producten: €0,00</p>
-      <p>Verzendkosten: €0,00</p>
-      <p>BTW: €0,00</p>
-      <p><strong>Totaal: €0,00</strong></p>
-    </div>
-    <h3>Betaalmethode</h3>
-    <ul>
-      <li><button>iDeal</button></li>
-      <li><button>Visa / Mastercard</button></li>
-      <li><button>PayPal</button></li>
-    </ul>
-    <button class="close-cart" id="closeCart">Sluiten</button>
-  </aside>
+  <!-- We now leave this container empty so that cart.js can render the proper view -->
+  <aside class="cart-popup" id="cartPopup"></aside>
 
   <!-- Sliding Menu -->
   <div class="sliding-menu" id="slidingMenu">
@@ -130,10 +114,5 @@
     </div>
   </div>
 
-
-
   <script src="javascript/header.js"></script>
-
-
 </body>
-

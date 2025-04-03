@@ -115,19 +115,22 @@
       <div class="products-flex">
         <div class="product-card">
           <img src="https://images.squarespace-cdn.com/content/v1/614a68d7da23344679d80759/1632593217235-LIVKP251VYPT3MYG4BAP/Broadband+Acoustic+Panels.png" alt="Product 1" />
-          <h3>Paneel Basic</h3>
+          <h3 id="product-name">Paneel Basic</h3>
+          <span class="size">120x60x4<span class="size-unit">cm</span></span> 
           <p class="price">€ 59,99 <span class="quantity">2 .st</span></p>
           <button type="button" class="button-primary">In Winkelmand</button>
         </div>
         <div class="product-card">
           <img src="images/products/tiles.jpg" alt="Product 2" />
-          <h3>Paneel Deluxe</h3>
+          <h3 id="product-name">Paneel Deluxe</h3>
+          <span class="size">40x40x4<span class="size-unit">cm</span></span> 
           <p class="price">€ 89,99 <span class="quantity">2 .st</span></p>
           <button type="button" class="button-primary">In Winkelmand</button>
         </div>
         <div class="product-card">
           <img src="images/products/large-panels.JPG" alt="Product 3" />
-          <h3>Paneel XL</h3>
+          <h3 id="product-name">Paneel XL</h3>
+          <span class="size">180x120x4<span class="size-unit">cm</span></span> 
           <p class="price">€ 129,99</p>
           <button type="button" class="button-primary">In Winkelmand</button>
         </div>
@@ -139,80 +142,35 @@
 
     <!-- 5) Panelen op maat (of Custom Panels) + acties/kortingen -->
     <section class="custom-panels" aria-label="Panelen op maat samenstellen">
+      <img src="images/hero/" alt="">
       <h2>Panelen op maat</h2>
       <p>
         Laat je akoestische panelen volledig op maat maken. Bepaal vorm, afmetingen, 
         kleur of print. 
       </p>
       <a href="panelen-op-maat.html" class="cta-button">Stel hier je paneel samen</a>
-      <h3>Acties en Kortingscodes</h3>
+      <!-- <h3>Acties en Kortingscodes</h3>
       <p>
         Profiteer nu van onze tijdelijke acties! Gebruik de code 
         <strong>JBDEAL10</strong> voor 10% korting op je eerste bestelling.
-      </p>
+      </p> -->
     </section>
-
-    <!-- 6) Testimonial / Klantenreviews -->
-    <section class="testimonials" aria-label="Klantenreviews">
-      <h2>Ervaringen van onze klanten</h2>
-      <div class="testimonial-list">
-        <article class="testimonial-item">
-          <blockquote>
-            “Een wereld van verschil in de akoestiek van mijn kantoor. Echt top!”
-          </blockquote>
-          <p class="author">- Jan de Vries</p>
-        </article>
-        <article class="testimonial-item">
-          <blockquote>
-            “Onze thuisstudio klinkt eindelijk professioneel. Aanrader!”
-          </blockquote>
-          <p class="author">- Maria Janssen</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- 7) Over ons -->
-    <section class="about-section" id="about-us" aria-label="Over JB Akoestiek">
-      <h2>Over JB Akoestiek</h2>
-      <ul>
-        <li>Wij zijn gespecialiseerd in akoestische oplossingen</li>
-        <li>Gebruiken duurzaam, circulair materiaal</li>
-        <li>Alle panelen zijn maatwerk</li>
-        <li>We beschikken over alle benodigde certificaten en keurmerken</li>
-      </ul>
-      <p>
-        <a href="about.html">Meer over ons bedrijf &raquo;</a>
-      </p>
-    </section>
-
-    <!-- 8) Eventuele Diensten-sectie -->
-    <section id="diensten" class="services-section" aria-label="Onze diensten">
-      <h2>Diensten</h2>
-      <div class="services-flex">
-        <div class="service-card">
-          <h3>Advies & Meting</h3>
-          <p>
-            Laat onze experts langskomen om de akoestische eigenschappen
-            van uw ruimte te meten en advies te geven.
-          </p>
-        </div>
-        <div class="service-card">
-          <h3>Montageservice</h3>
-          <p>
-            Geen zorgen over installatie. Wij bieden professionele
-            montageservice van onze panelen aan huis of op kantoor.
-          </p>
-        </div>
-        <div class="service-card">
-          <h3>Projectbegeleiding</h3>
-          <p>
-            Bij grotere projecten (theaters, kantoren) verzorgen wij
-            het gehele traject van plan tot oplevering.
-          </p>
-        </div>
-      </div>
-    </section>
-
+    
+  <!-- 5.5) Offerte aanvragen   -->
+  <section class="quote" aria-label="Panelen op maat samenstellen">
+    <img src="images/hero/" alt="">
+    <h2>Vraag een offerte aan</h2>
+    <p>
+      Heb je een speciefieke wens oulleg 
+    </p>
+    <a href="offerte.html" class="cta-button">Vraag aan</a>
+    <!-- <h3>Acties en Kortingscodes</h3>
+    <p>
+      Profiteer nu van onze tijdelijke acties! Gebruik de code 
+      <strong>JBDEAL10</strong> voor 10% korting op je eerste bestelling.
+    </p> -->
+  </section>
+    
     <!-- 9) Nieuwsbrief / Contact CTA -->
     <section class="newsletter-cta" aria-label="Blijf op de hoogte">
       <h2>Schrijf je in voor onze nieuwsbrief</h2>
@@ -229,7 +187,7 @@
           placeholder="Jouw e-mailadres"
           required
         />
-        <button type="submit" class="button-primary">Aanmelden</button>
+        <button type="submit" class="cta-button">Aanmelden</button>
       </form>
     </section>
   </main>
@@ -256,6 +214,7 @@
 
   <!-- ===== SCRIPTS ===== -->
   <script src="javascript/header.js"></script>
+  <script src="javascript/cart.js"></script>
   <script src="javascript/hero-slider.js"></script>
   <script src="javascript/cart-popup.js"></script>
   <script>

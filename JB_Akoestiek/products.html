@@ -19,57 +19,119 @@
     <nav class="navigation"></nav>
 
     <main class="container-products">
-        <!-- Search Box -->
-        <div class="search-container">
-            <input type="text" id="searchInput" placeholder="Search products...">
-            <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="11" cy="11" r="8"></circle>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
-        </div>
-
+       
+            
         <div class="content-wrapper">
-            <!-- Product Grid -->
+
+       
+<!-- Filter Sidebar -->
+<aside class="filter-sidebar">
+    <h2>Filters</h2>
+    
+    <div class="filter-section">
+        <h3>Price Range</h3>
+        <input type="range" id="priceRange" min="0" max="200" step="10">
+        <div class="price-labels">
+            <span>€0</span>
+            <span>€200</span>
+        </div>
+    </div>
+
+    <div class="filter-section">
+        <h3>Categories</h3>
+        <label class="checkbox-label">
+            <input type="checkbox">Basic
+        </label>
+        <label class="checkbox-label">
+            <input type="checkbox">Deluxe
+        </label>
+        <label class="checkbox-label">
+            <input type="checkbox">XL
+        </label>
+    </div>
+
+  
+</aside>
+<div class="filterSearchprodGrid-block">
+            <div class="filetSearchbar-flex">
+            <!-- Filter (price low/high and date added) Grid -->
+             <div class="div-grid-sortbyfilter">
+            <div class="filter-section">
+                <!-- <h3>Sort By</h3> -->
+                <select id="sortSelect">
+                    <option value="price-asc">Prijs: Oplopend</option>
+                    <option value="price-desc">Price: Aflopend</option>
+                    <option value="newest">Nieuwste</option>
+                </select>
+            </div>
+             </div>
+                  <!-- Search Box -->
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Ik ben op zoek naar...">
+            <button class="search-icon">
+                <span class="material-symbols-outlined">search</span>
+            </button>
+        </div>
+        </div>
+        
+             <!-- Product Grid -->
             <section class="products-grid" id="products" aria-label="Products">
                 <!-- Products will be inserted here by JavaScript -->
             </section>
+        </div>
+        </div>  
+        </div>
 
-            <!-- Filter Sidebar -->
-            <aside class="filter-sidebar">
-                <h2>Filters</h2>
-                
-                <div class="filter-section">
-                    <h3>Price Range</h3>
-                    <input type="range" id="priceRange" min="0" max="200" step="10">
-                    <div class="price-labels">
-                        <span>€0</span>
-                        <span>€200</span>
+        <!-- PRODUCT MODAL -->
+        <section class="product">
+            <div class="product__photo">
+                <div class="photo-container">
+                    <div class="photo-main">
+                        <div class="controls">
+                            <i class="material-icons">share</i>
+                            <i class="material-icons">favorite_border</i>
+                        </div>
+                        <img src="https://res.cloudinary.com/john-mantas/image/upload/v1537291846/codepen/delicious-apples/green-apple-with-slice.png" alt="green apple slice">
+                    </div>
+                    <div class="photo-album">
+                        <ul>
+                            <li><img src="https://res.cloudinary.com/john-mantas/image/upload/v1537302064/codepen/delicious-apples/green-apple2.png" alt="green apple"></li>
+                            <li><img src="https://res.cloudinary.com/john-mantas/image/upload/v1537303532/codepen/delicious-apples/half-apple.png" alt="half apple"></li>
+                            <li><img src="https://res.cloudinary.com/john-mantas/image/upload/v1537303160/codepen/delicious-apples/green-apple-flipped.png" alt="green apple"></li>
+                            <li><img src="https://res.cloudinary.com/john-mantas/image/upload/v1537303708/codepen/delicious-apples/apple-top.png" alt="apple top"></li>
+                        </ul>
                     </div>
                 </div>
-
-                <div class="filter-section">
-                    <h3>Categories</h3>
-                    <label class="checkbox-label">
-                        <input type="checkbox"> Category 1
-                    </label>
-                    <label class="checkbox-label">
-                        <input type="checkbox"> Category 2
-                    </label>
-                    <label class="checkbox-label">
-                        <input type="checkbox"> Category 3
-                    </label>
+            </div>
+            <div class="product__info">
+                <div class="title">
+                    <h1>Delicious Apples</h1>
+                    <span>COD: 45999</span>
                 </div>
-
-                <div class="filter-section">
-                    <h3>Sort By</h3>
-                    <select id="sortSelect">
-                        <option value="price-asc">Price: Low to High</option>
-                        <option value="price-desc">Price: High to Low</option>
-                        <option value="newest">Newest First</option>
-                    </select>
+                <div class="price2">
+                    R$ <span>7.93</span>
                 </div>
-            </aside>
-        </div>
+                <div class="variant">
+                    <h3>SELECT A COLOR</h3>
+                    <ul>
+                        <li><img src="https://res.cloudinary.com/john-mantas/image/upload/v1537302064/codepen/delicious-apples/green-apple2.png" alt="green apple"></li>
+                        <li><img src="https://res.cloudinary.com/john-mantas/image/upload/v1537302752/codepen/delicious-apples/yellow-apple.png" alt="yellow apple"></li>
+                        <li><img src="https://res.cloudinary.com/john-mantas/image/upload/v1537302427/codepen/delicious-apples/orange-apple.png" alt="orange apple"></li>
+                        <li><img src="https://res.cloudinary.com/john-mantas/image/upload/v1537302285/codepen/delicious-apples/red-apple.png" alt="red apple"></li>
+                    </ul>
+                </div>
+                <div class="description">
+                    <h3>BENEFITS</h3>
+                    <ul>
+                        <li>Apples are nutricious</li>
+                        <li>Apples may be good for weight loss</li>
+                        <li>Apples may be good for bone health</li>
+                        <li>They're linked to a lowest risk of diabetes</li>
+                    </ul>
+                </div>
+                <button class="button-primary">In winkelwagen</button>
+            </div>
+        </section>
     </main>
     <!-- ===== FOOTER ===== -->
   <footer class="footer" id="contact" aria-label="Voettekst">
@@ -93,9 +155,10 @@
 
   <!-- ===== SCRIPTS ===== -->
   <script src="javascript/header.js"></script>
-  
+  <script src="javascript/products.js"></script>
+  <script src="javascript/cart.js"></script>
   <script src="javascript/cart-popup.js"></script>
-   <script src="javascript/products.js"></script>
+   
    <script>
     // Dynamically set current year in footer
     document.getElementById("year").textContent = new Date().getFullYear();

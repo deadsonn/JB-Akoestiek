@@ -73,30 +73,27 @@ document.addEventListener('DOMContentLoaded', () => {
 function initializeCart() {
   const cartButton = document.getElementById('cartButton');
   const cartPopup = document.getElementById('cartPopup');
-  const closeCart = document.getElementById('closeCart');
 
-  if (!cartButton || !cartPopup || !closeCart) {
+  // Remove closeCart from the check because it is dynamically generated.
+  if (!cartButton || !cartPopup) {
     console.error('Cart elements not found. Make sure they exist in the HTML.');
     return;
   }
 
+  // When the cart button is clicked, open the cart popup by calling openCartPopup()
   cartButton.addEventListener('click', (e) => {
     e.stopPropagation();
-    cartPopup.classList.toggle('open');
+    openCartPopup();
   });
 
-  closeCart.addEventListener('click', () => {
-    cartPopup.classList.remove('open');
-  });
-
-  // Close cart when clicking outside
+  // Close the cart popup when clicking outside of it
   document.addEventListener('click', (e) => {
     if (!cartPopup.contains(e.target) && !cartButton.contains(e.target)) {
       cartPopup.classList.remove('open');
     }
   });
 
-  // Prevent closing when clicking inside the cart
+  // Prevent closing when clicking inside the cart popup
   cartPopup.addEventListener('click', (e) => {
     e.stopPropagation();
   });
